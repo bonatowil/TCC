@@ -139,13 +139,14 @@ if __name__ == '__main__':
             trueValue = 0
         
         # results = all(number_list, trueValue=trueValue, round=do_round, roundDecimal=round_value )
-
-        fprint(f'\nA média é = {mean(number_list, round=do_round, roundDecimal=round_value)}')
-        fprint(f'O desvio padrão amostral é = {ssd(number_list, round=do_round, roundDecimal=round_value)}')
-        fprint(f'O desvio padrão populacional é = {psd(number_list, round=do_round, roundDecimal=round_value)}')
-        fprint(f'O desvio padrão relativo é = {rsd(number_list, round=do_round, roundDecimal=round_value)}')
-        fprint(f'O coeficiente de variação é = {cv(number_list, round=do_round, roundDecimal=round_value)}%\n')
+        all_values = {"numbers": number_list, "round": do_round, "roundDecimal": round_value}
+        fprint(f'\nA média é = {mean(*all_values.values())}')
+        fprint(f'O desvio padrão amostral é = {ssd(*all_values.values())}')
+        fprint(f'O desvio padrão populacional é = {psd(*all_values.values())}')
+        fprint(f'O desvio padrão relativo é = {rsd(*all_values.values())}')
+        fprint(f'O coeficiente de variação é = {cv(*all_values.values())}%\n')
         if trueValue != 0:
+            all_values['trueValue'] = trueValue
             fprint(f'O erro absoluto é = {aerr(number_list, trueValue=trueValue, round=do_round, roundDecimal=round_value)}')
             fprint(f'O erro relativo é = {rerr(number_list, trueValue=trueValue, round=do_round, roundDecimal=round_value)}%\n')
 
