@@ -145,9 +145,9 @@ if __name__ == '__main__':
         fprint(f'O desvio padrão relativo é = {rsd(*all_values.values())}')
         fprint(f'O coeficiente de variação é = {cv(*all_values.values())}%\n')
         if trueValue != 0:
-            all_values['trueValue'] = trueValue
-            fprint(f'O erro absoluto é = {aerr(number_list, trueValue=trueValue, round=do_round, roundDecimal=round_value)}')
-            fprint(f'O erro relativo é = {rerr(number_list, trueValue=trueValue, round=do_round, roundDecimal=round_value)}%\n')
+            all_values = {"numbers": number_list, 'trueValue': trueValue, "round": do_round, "roundDecimal": round_value}
+            fprint(f'O erro absoluto é = {aerr(*all_values.values())}')
+            fprint(f'O erro relativo é = {rerr(*all_values.values())}%\n')
 
         while True:
             try:
