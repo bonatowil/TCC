@@ -132,12 +132,8 @@ if __name__ == '__main__':
             print('\nPor favor digite S ou N!')
             continue
 
-
-        try:
-            trueValue = float(trueValue)
-        except ValueError:
-            trueValue = 0
-        
+        trueValue = float(trueValue) if isinstance(trueValue, float) else 0
+                
         all_values = {"numbers": number_list, "round": do_round, "roundDecimal": round_value}
         fprint(f'\nA média é = {mean(*all_values.values())}')
         fprint(f'O desvio padrão amostral é = {ssd(*all_values.values())}')
