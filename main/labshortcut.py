@@ -8,7 +8,7 @@ def fprint(text): #Função para printar letra por letra no terminal
         sleep(0.016)
     print()
  
-def all(n, trueValue=0, round=True, roundDecimal=2): #Função que une todas as fórmulas presentes
+def all(n, trueValue=0, round=False, roundDecimal=2): #Função que une todas as fórmulas presentes
     mean = sum(n) / len(n)
     population_standart_deviation = sqrt(sum([(values - mean) ** 2 for values in n]) / len(n))
     sample_standart_deviation = sqrt(sum([(values - mean) ** 2 for values in n]) / (len(n)-1))
@@ -28,14 +28,14 @@ def all(n, trueValue=0, round=True, roundDecimal=2): #Função que une todas as 
     else:
         return values
 
-def mean(n, round=True, roundDecimal=2): #mean (Média)
+def mean(n, round=False, roundDecimal=2): #mean (Média)
     mean = sum(n) / len(n)
     if round is True:
         return reround(mean, roundDecimals=roundDecimal)
     else:
         return mean
 
-def ssd(n, round=True, roundDecimal=2): #ssd = sample standart deviation (Desvio padrão amostral)
+def ssd(n, round=False, roundDecimal=2): #ssd = sample standart deviation (Desvio padrão amostral)
     mean = sum(n) / len(n) 
     sample_standart_deviation = sqrt(sum([(values - mean) ** 2 for values in n]) / (len(n)-1))
     if round is True:
@@ -43,7 +43,7 @@ def ssd(n, round=True, roundDecimal=2): #ssd = sample standart deviation (Desvio
     else:
         return sample_standart_deviation
 
-def psd(n, round=True, roundDecimal=2): #psd = population standart deviation (Desvio padrão populacional)
+def psd(n, round=False, roundDecimal=2): #psd = population standart deviation (Desvio padrão populacional)
     mean = sum(n) / len(n) 
     population_standart_deviation = sqrt(sum([(values - mean) ** 2 for values in n]) / len(n))
     if round is True:
@@ -51,7 +51,7 @@ def psd(n, round=True, roundDecimal=2): #psd = population standart deviation (De
     else:
         return population_standart_deviation
 
-def rsd(n, round=True, roundDecimal=2): #rsd = relative standard deviation (Desvio padrão relativo)
+def rsd(n, round=False, roundDecimal=2): #rsd = relative standard deviation (Desvio padrão relativo)
     mean = sum(n) / len(n)
     sample_standart_deviation = sqrt(sum([(values - mean) ** 2 for values in n]) / (len(n)-1))
     relative_standard_deviation = sample_standart_deviation / mean
@@ -60,7 +60,7 @@ def rsd(n, round=True, roundDecimal=2): #rsd = relative standard deviation (Desv
     else:
         return relative_standard_deviation
 
-def cv(n, round=True, roundDecimal=2): #cv = coefficient of variation (Coeficiente de variação)
+def cv(n, round=False, roundDecimal=2): #cv = coefficient of variation (Coeficiente de variação)
     mean = sum(n) / len(n) 
     sample_standart_deviation = sqrt(sum([(values - mean) ** 2 for values in n]) / (len(n)-1))
     coefficient_of_variation = (sample_standart_deviation / mean) * 100
@@ -69,7 +69,7 @@ def cv(n, round=True, roundDecimal=2): #cv = coefficient of variation (Coeficien
     else:
         return coefficient_of_variation
     
-def aerr(n, trueValue, round=True, roundDecimal=2): #aerr = absolute error (Erro absoluto)
+def aerr(n, trueValue, round=False, roundDecimal=2): #aerr = absolute error (Erro absoluto)
     mean = sum(n) / len(n) 
     absolute_error = mean - trueValue
     if round is True:
@@ -77,7 +77,7 @@ def aerr(n, trueValue, round=True, roundDecimal=2): #aerr = absolute error (Erro
     else:
         return absolute_error
 
-def rerr(n, trueValue, round=True, roundDecimal=2): #reer = relative error (Erro relativo)
+def rerr(n, trueValue, round=False, roundDecimal=2): #reer = relative error (Erro relativo)
     mean = sum(n) / len(n) 
     relative_error = ((mean - trueValue) / trueValue) * 100
     if round is True:
