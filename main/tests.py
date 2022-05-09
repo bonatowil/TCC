@@ -1,4 +1,5 @@
 from math import sqrt
+from reround import reround
 
 def qtest(n, confidence, xq=None):
     table = {'99': [0.994, 0.926, 0.821, 0.740, 0.680, 0.634, 0.598, 0.568], 
@@ -15,26 +16,27 @@ def qtest(n, confidence, xq=None):
     n.sort()
     xp = n[n.index(xq)+1] if n[n.index(xq)] is not max(n) else n[n.index(xq)-1]
     f = max(n) - min(n)
-    Q = abs(xq-xp) / f
+    q = reround(abs(xq-xp) / f, 2, 'float')
     if str(confidence) == '99':
-        Qcrit = (table['99'][len(n)-3])
-        reject = True if Q > Qcrit else False
-        return {f'{xq}': reject} if automatic_outliner else reject
+        qcrit = (table['99'][len(n)-3])
+        reject = True if q > qcrit else False
+        return {f'{xq}': reject} if automatic_outliner else f"Q: {q} Qcrit: {qcrit}", reject
     elif str(confidence) == '95':
-        Qcrit = (table['95'][len(n)-3])
-        reject = True if Q > Qcrit else False
-        return {f'{xq}': reject} if automatic_outliner else reject
+        qcrit = (table['95'][len(n)-3])
+        reject = True if q > qcrit else False
+        return {f'{xq}': reject} if automatic_outliner else f"Q: {q} Qcrit: {qcrit}", reject
     elif str(confidence) == '90':
-        Qcrit = (table['90'][len(n)-3])
-        reject = True if Q > Qcrit else False
-        return {f'{xq}': reject} if automatic_outliner else reject
+        qcrit = (table['90'][len(n)-3])
+        reject = True if q > qcrit else False
+        return {f'{xq}': reject} if automatic_outliner else f"Q: {q} Qcrit: {qcrit}", reject
     else:
         raise ValueError
 
 def grubbstest(n, sus_n):
-    mean = sum(n) / len(n)
-    standard_deviation = sqrt(sum([(values - mean) ** 2 for values in n]) / (len(n)-1))
-    G = abs(sus_n - mean) / standard_deviation
+    mean = reround(sum(n) / len(n), 2, 'float')
+    standard_deviation = reround(sqrt(sum([(values - mean) ** 2 for values in n]) / (len(n)-1)), 2, 'float')
+    g = abs(sus_n - mean) / standard_deviation
+    return g
 
 if __name__ == '__main__':
-    pass
+    print(grubbstest([4.20, 7.01, 7.31, 7.54, 7.55, 7.58, 7.59], 4.20))
