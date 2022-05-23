@@ -15,7 +15,7 @@ def all(n, trueValue=0, round=False, roundDecimal=2): #Função que une todas as
     relative_standard_deviation = sample_standart_deviation / mean
     coefficient_of_variation = (sample_standart_deviation / mean) * 100
     values = [mean, sample_standart_deviation, population_standart_deviation, relative_standard_deviation, coefficient_of_variation]
-    if trueValue != 0: #Se o valor for diferenente de zero fará com que essas duas fórmulas entrem para a lista final (values)
+    if trueValue != 0: #Se o valor for diferente de zero fará com que essas duas fórmulas entrem para a lista final (values)
             absolute_error = mean - trueValue
             relative_error = ((mean - trueValue) / trueValue) * 100
             values.extend([absolute_error, relative_error])
