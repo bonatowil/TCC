@@ -10,8 +10,8 @@ def fprint(text): #Função para printar letra por letra no terminal
  
 def all(n, trueValue=0, round=False, roundDecimal=2): #Função que une todas as fórmulas presentes
     mean = sum(n) / len(n)
-    population_standart_deviation = sqrt(sum([(values - mean) ** 2 for values in n]) / len(n))
-    sample_standart_deviation = sqrt(sum([(values - mean) ** 2 for values in n]) / (len(n)-1))
+    population_standart_deviation = sqrt(sum([(x - mean) ** 2 for x in n]) / len(n))
+    sample_standart_deviation = sqrt(sum([(x - mean) ** 2 for x in n]) / (len(n)-1))
     relative_standard_deviation = sample_standart_deviation / mean
     coefficient_of_variation = (sample_standart_deviation / mean) * 100
     values = [mean, sample_standart_deviation, population_standart_deviation, relative_standard_deviation, coefficient_of_variation]
@@ -37,7 +37,7 @@ def mean(n, round=False, roundDecimal=2): #mean (Média)
 
 def ssd(n, round=False, roundDecimal=2): #ssd = sample standart deviation (Desvio padrão amostral)
     mean = sum(n) / len(n) 
-    sample_standart_deviation = sqrt(sum([(values - mean) ** 2 for values in n]) / (len(n)-1))
+    sample_standart_deviation = sqrt(sum([(x - mean) ** 2 for x in n]) / (len(n)-1))
     if round is True:
         return reround(sample_standart_deviation, roundDecimals=roundDecimal)
     else:
@@ -45,7 +45,7 @@ def ssd(n, round=False, roundDecimal=2): #ssd = sample standart deviation (Desvi
 
 def psd(n, round=False, roundDecimal=2): #psd = population standart deviation (Desvio padrão populacional)
     mean = sum(n) / len(n) 
-    population_standart_deviation = sqrt(sum([(values - mean) ** 2 for values in n]) / len(n))
+    population_standart_deviation = sqrt(sum([(x - mean) ** 2 for x in n]) / len(n))
     if round is True:
         return reround(population_standart_deviation, roundDecimals=roundDecimal)
     else:
@@ -53,7 +53,7 @@ def psd(n, round=False, roundDecimal=2): #psd = population standart deviation (D
 
 def rsd(n, round=False, roundDecimal=2): #rsd = relative standard deviation (Desvio padrão relativo)
     mean = sum(n) / len(n)
-    sample_standart_deviation = sqrt(sum([(values - mean) ** 2 for values in n]) / (len(n)-1))
+    sample_standart_deviation = sqrt(sum([(x - mean) ** 2 for x in n]) / (len(n)-1))
     relative_standard_deviation = sample_standart_deviation / mean
     if round is True:
         return reround(relative_standard_deviation, roundDecimals=roundDecimal)
@@ -62,7 +62,7 @@ def rsd(n, round=False, roundDecimal=2): #rsd = relative standard deviation (Des
 
 def cv(n, round=False, roundDecimal=2): #cv = coefficient of variation (Coeficiente de variação)
     mean = sum(n) / len(n) 
-    sample_standart_deviation = sqrt(sum([(values - mean) ** 2 for values in n]) / (len(n)-1))
+    sample_standart_deviation = sqrt(sum([(x - mean) ** 2 for x in n]) / (len(n)-1))
     coefficient_of_variation = (sample_standart_deviation / mean) * 100
     if round is True:
         return reround(coefficient_of_variation, roundDecimals=roundDecimal)
