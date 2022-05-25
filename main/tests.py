@@ -20,15 +20,15 @@ def qtest(n, confidence, xq=None):
     if str(confidence) == '99':
         qcrit = (table['99'][len(n)-3])
         reject = True if q > qcrit else False
-        return {f'{xq}': reject} if automatic_outliner else f"Q: {q} Qcrit: {qcrit}", reject
+        return {f'{xq}': reject} if automatic_outliner else (f"Q: {q} Qcrit: {qcrit}", reject)
     elif str(confidence) == '95':
         qcrit = (table['95'][len(n)-3])
         reject = True if q > qcrit else False
-        return {f'{xq}': reject} if automatic_outliner else f"Q: {q} Qcrit: {qcrit}", reject
+        return {f'{xq}': reject} if automatic_outliner else (f"Q: {q} Qcrit: {qcrit}", reject)
     elif str(confidence) == '90':
         qcrit = (table['90'][len(n)-3])
         reject = True if q > qcrit else False
-        return {f'{xq}': reject} if automatic_outliner else f"Q: {q} Qcrit: {qcrit}", reject
+        return {f'{xq}': reject} if automatic_outliner else (f"Q: {q} Qcrit: {qcrit}", reject)
     else:
         raise ValueError
 
@@ -39,4 +39,4 @@ def grubbstest(n, sus_n):
     return g
 
 if __name__ == '__main__':
-    print(grubbstest([4.20, 7.01, 7.31, 7.54, 7.55, 7.58, 7.59], 4.20))
+    print(grubbstest([4.20, 7.01, 7.31, 7.54, 7.55, 7.58, 7.59], 4.2))

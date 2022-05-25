@@ -19,6 +19,8 @@ Outras fórmulas        | \-              | Desvio Padrão Relativo
 * *Adicionar opção de usar o desvio padrão populacional nas fórmulas que utilizam do desvio padrão*.
 * Opção de usar valores arredondados na utilização de fórmulas (desnecessário mas pode ser útil em algum momento, não pesará no arquivo).
 
+* Teste de grubbs fonte = https://www.real-statistics.com/students-t-distribution/identifying-outliers-using-t-distribution/grubbs-test/
+
 ## ***GUI***
 Implementar             | Otimizar | Implementado
 :---------------------: | :------: | :----------:
