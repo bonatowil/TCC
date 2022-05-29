@@ -1,6 +1,6 @@
 from math import sqrt
 from reround import reround
-
+from scipy.stats import t
 def qtest(n, confidence, xq=None):
     table = {'99': [0.994, 0.926, 0.821, 0.740, 0.680, 0.634, 0.598, 0.568], 
             '95':[0.970, 0.829, 0.710, 0.625, 0.568, 0.526, 0.493, 0.466], 
@@ -32,11 +32,15 @@ def qtest(n, confidence, xq=None):
     else:
         raise ValueError
 
-def grubbstest(n, sus_n):
+def grubbstest(n, sus_n, alpha=0.05):
+    length = len(n)
+    tcrit = abs(t.ppf(q=alpha/length, df=length-2))
+    gcrit = ((length-1) * tcrit) / sqrt(length*(length-2 + (tcrit**2)))
     mean = reround(sum(n) / len(n), 2, 'float')
-    standard_deviation = reround(sqrt(sum([(values - mean) ** 2 for values in n]) / (len(n)-1)), 2, 'float')
+    standard_deviation = reround(sqrt(sum([(values - mean) ** 2 for values in n]) / (length-1)), 2, 'float')
     g = abs(sus_n - mean) / standard_deviation
-    return g
+    g, gcrit = reround(g, 4), reround(gcrit, 4)
+    return f"REJECT {sus_n} ({g} > {gcrit})" if g > gcrit else f"DON'T REJECT {sus_n} ({g} < {gcrit})"
 
 if __name__ == '__main__':
-    print(grubbstest([4.20, 7.01, 7.31, 7.54, 7.55, 7.58, 7.59], 4.2))
+    pass
