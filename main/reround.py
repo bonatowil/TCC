@@ -1,4 +1,4 @@
-def reround(number, roundDecimals=2, returnClass='float'):
+def reround(number=int, roundDecimals=2, returnClass='float'):
     if 'e' in str(number):
         from numpy import format_float_positional
         number = str(format_float_positional(number, trim='k'))
