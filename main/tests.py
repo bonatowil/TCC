@@ -32,7 +32,7 @@ def qtest(n, confidence, xq=None):
     else:
         raise ValueError
 
-def grubbstest(n, sus_n, alpha=0.05):
+def gtest(n, sus_n, alpha=0.05):
     length = len(n)
     tcrit = abs(t.ppf(q=alpha/length, df=length-2))
     gcrit = ((length-1) * tcrit) / sqrt(length*(length-2 + (tcrit**2)))
