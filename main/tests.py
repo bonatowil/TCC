@@ -41,6 +41,3 @@ def gtest(n, sus_n, alpha=0.05):
     g = abs(sus_n - mean) / standard_deviation
     g, gcrit = reround(g, 4), reround(gcrit, 4)
     return f"REJECT {sus_n} ({g} > {gcrit})" if g > gcrit else f"DON'T REJECT {sus_n} ({g} < {gcrit})"
-
-if __name__ == '__main__':
-    pass
