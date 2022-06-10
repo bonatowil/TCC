@@ -1,6 +1,5 @@
 from math import sqrt
 from reround import reround
-from scipy.stats import t
 def qtest(n, confidence, xq=None):
     table = {'99': [0.994, 0.926, 0.821, 0.740, 0.680, 0.634, 0.598, 0.568], 
             '95':[0.970, 0.829, 0.710, 0.625, 0.568, 0.526, 0.493, 0.466], 
