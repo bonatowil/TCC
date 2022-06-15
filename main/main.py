@@ -16,6 +16,7 @@ if debug == 1:
                 if input_numbers == '' and i > 2:
                     add_numbers = False
                     break
+                input_numbers = input_numbers.replace(',', '.')
                 input_numbers = float(input_numbers)
                 i += 1
                 number_list.append(input_numbers)
