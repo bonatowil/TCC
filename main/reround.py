@@ -1,4 +1,4 @@
-def reround(number=int, roundDecimals=2, returnClass='float'):
+def reround(number, roundDecimals=2, returnClass='str'):
     if 'e' in str(number):
         from numpy import format_float_positional
         number = str(format_float_positional(number, trim='k'))
@@ -18,30 +18,6 @@ def reround(number=int, roundDecimals=2, returnClass='float'):
     round_difference = float(round_difference)
     decimal_index = int(decimals[roundDecimals - 1])
 
-    if roundDecimals == 0:
-        decimal_numbers = '0.'
-        for x in decimals:
-            decimal_numbers += x
-        decimal_numbers = float(decimal_numbers)
-        if decimal_numbers > 0.5: 
-            whole_number[-1] = str(int(whole_number[-1]) + 1)
-        if decimal_numbers == 0.5 and int(whole_number[-1]) % 2 != 0:
-            whole_number[-1] = str(int(whole_number[-1]) + 1)
-        while '10' in whole_number:
-            final_number = ''
-            for x in whole_number:  
-                final_number += x
-            if int(final_number) == 10**(len(final_number)-1):
-                return str(final_number) if returnClass == 'str' else float(final_number)
-            final_number = int(final_number)
-            index = whole_number.index('10')
-            whole_number[index] = '0' 
-            whole_number[index-1] = str(int(whole_number[index-1]) + 1)
-        final_number = ''
-        for x in whole_number:
-            final_number += x
-        final_number = int(final_number)
-        return str(final_number) if returnClass == 'str' else float(final_number)
     if round_difference > 5 * 10**(-roundDecimals-1):
         decimals[roundDecimals-1] = str(int(decimals[roundDecimals-1]) + 1)
 
@@ -84,7 +60,7 @@ def reround(number=int, roundDecimals=2, returnClass='float'):
     if returnClass == 'str':
         return (f"{final_number:.{roundDecimals}f}")
     else:
-        return final_number
+        return float(f"{final_number:.{roundDecimals}f}")
 
 if __name__ == '__main__':
     from numpy import arange
@@ -96,6 +72,7 @@ if __name__ == '__main__':
         equal = True if rounds == tround else False
         if rounds != tround:
             deviation += 1
+            # print(true_round(i)[1])
             print(f'{"Valor":^25}', '|', f'{"Python":^9}', '|', f'{"Função":^9}','|', "Iguais?")
             print(f'{i:^25}', '|', f'{rounds:^9}', '|', f'{tround:^9}','|', equal)
             print()
