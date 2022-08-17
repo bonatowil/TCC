@@ -1,6 +1,6 @@
 #(P1*V1) = (P2*V2)
 # V = volume em litro
-# P = Pressão em atm, mmHg ou Pa
+# P = Pressao em atm, mmHg ou Pa
 # Eu nao tenho certeza de como esse codigo foi feito, favor nao mexer.
 
 def boyle(p1=0, p2=0,v1=0,v2=0):
