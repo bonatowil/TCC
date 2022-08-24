@@ -26,6 +26,7 @@ if debug == 1:
                 if trueValue == '':
                     truevalueloop = False
                     break
+                trueValue = trueValue.replace(',', '.')
                 trueValue = float(trueValue)
                 truevalueloop = False
                 break
