@@ -3,7 +3,7 @@
 # m = massa
 # d = densidade
 
-def density(d=1.66,m=150,v=0):
+def density(d=0,m=0,v=0):
     if v == 0 and (d and m) != 0:
         resultado = m / d
         return resultado
