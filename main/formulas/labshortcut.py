@@ -1,6 +1,8 @@
 from math import sqrt
-from reround import reround
-
+try:
+    from reround import reround
+except ModuleNotFoundError:
+    from formulas.reround import reround
 def fprint(text): #Função para printar letra por letra no terminal
     from time import sleep
     for l in text:
