@@ -25,6 +25,8 @@ def language_menu():
     global menu_open
     menu_open = True
     open_menu()
+    for widget in main_frame.winfo_children():
+        widget.destroy()
     option_title.config(text='Idioma')
     main_frame.grid(row=1, column=0, columnspan=3, pady=(60, 0))
     ctk.CTkOptionMenu(main_frame, values=['English', 'Português'], variable=language_var).grid(row=1, column=0, padx=(30, 0))
@@ -34,13 +36,15 @@ def results(all):
     open_calculator('density', all)
 
 def close_calculator():
-    option_title.config(text='Densidade')
+    option_title.config(text='Padrão')
     main_frame.grid_forget()
     open_menu()
 
 def open_calculator(type, values=False):
     global menu_open
     menu_open = True
+    for widget in main_frame.winfo_children():
+        widget.destroy()
     open_menu()
     if type == 'density':
         from formulas.density import density
@@ -67,8 +71,6 @@ def open_calculator(type, values=False):
 
 def open_menu():
     global menu_open
-    for widget in main_frame.winfo_children():
-        widget.destroy()
     if menu_open == False:
         menu_frame.grid(row=1, column=0, columnspan=2)
         option_title.grid_forget()
@@ -116,15 +118,6 @@ Button(menu_frame,
     cursor='hand2',
     command=language_menu,
     bd=0).grid(row=1, column=0, ipadx=15, pady=(0, 10), sticky='w')
-Button(menu_frame,
-    text="• Tema",
-    bg='#171c2f',
-    fg='white',
-    font=('Input', 8),
-    activebackground='#171c2f',
-    activeforeground='white',
-    cursor='hand2',
-    bd=0).grid(row=2, column=0, ipadx=15, pady=(0, 10), sticky='w')
 
 Label(menu_frame,
     text="Calculadora",
