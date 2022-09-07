@@ -9,7 +9,7 @@
 # T = Temperatura em Kelvin
 # Eu nao tenho certeza de como esse codigo foi feito, favor nao mexer.
 
-def claperyon(const, p=0, v=0, n=0, r=0, t=0):
+def claperyon(const="mmHg", p=0, v=0, n=0, r=0, t=0):
                                       #variavel a ser feita
     if const == "Pa":                 #const sera a varaiavel recebida pelo GUI 
         r = 8.314 
