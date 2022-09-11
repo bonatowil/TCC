@@ -2,7 +2,12 @@ import customtkinter as ctk
 from tkinter import *
 
 root = ctk.CTk()
+
+menu_img = PhotoImage(file='main/images/menu.png')
+lab_icon = PhotoImage(file='main/images/lab_icon.png')
+
 root.title("Lab Shortcut")
+root.iconphoto(True, lab_icon)
 root.geometry("320x500+620+150")
 root.config(background='#4B5267')
 ctk.set_appearance_mode("System")
@@ -10,7 +15,6 @@ ctk.set_appearance_mode("System")
 language_var = StringVar()
 language_var.set('Português')
 
-menu_img = PhotoImage(file='main/images/menu.png')
 menu_open = False
 calc_open = False
 
