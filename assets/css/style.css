@@ -1,0 +1,123 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    color: #bcbcbc;
+    background-color: #151516;
+    font-size: 1.35em;
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+nav {
+    width: 100%;
+    margin: 5px 0 0 0;
+}
+
+nav ul {
+    margin: 0 10px 20px;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    text-align: center;
+    flex-direction: row;
+    justify-content: space-around;
+    border: 2px solid gray;
+    border-radius: 10px;
+    background-color: #443d3d;
+    font-size: 1.5em;
+}
+
+nav ul li {
+    flex-basis: 33.5%;
+}
+
+nav ul li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    border-right: 2px solid gray;
+}
+
+nav ul li:last-child a {
+    border-right: 0;
+}
+
+nav ul li:hover {
+    background-color: #544b4b;
+}
+
+nav ul li:hover:first-child {
+    border-radius: 10px 0 0 10px;
+}
+
+nav ul li:hover:last-child {
+    border-radius: 0 10px 10px 0;
+}
+
+h1 {
+    font-weight: 400;
+    width: 30%;
+    margin: auto;
+    text-align: center;
+    border: 2px solid gray;
+    border-radius: 8px;
+    background-color: #443d3d;
+}
+
+.calc_frame {
+    margin: 2rem auto;
+    height: 40rem;
+    width: 40rem    ;
+    background-color: #2d2d2f;
+    border: 2px solid gray;
+    border-radius: 20px;
+    flex-wrap: wrap;
+    font-size: 3em;
+    position: relative;
+}
+
+.calc_frame > h2 {
+    font-size: 1em;
+    text-align: end;
+    width: 90%;
+    margin: 15px auto;
+    padding: 20px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    background-color: #3d3e46;
+}
+
+.calc_frame ul {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.calc_frame ul li {
+    font-size: 1em;
+    padding: 20px;
+    margin: 5px;
+    flex-basis: 33%;
+    border: 2px solid gray;
+    border-radius: 15px;
+    flex-basis: 33%;
+    font-weight: 900;
+    box-shadow: 1px 2px 7px 1px #0000005b;
+    width: 100%;
+}
+.calc_frame ul li:hover {
+    background-color: #3d3e46;
+    cursor: pointer;
+}
+
+.calc_frame .row-4 ul li:first-child {
+    flex-basis: 70%;
+}
