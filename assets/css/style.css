@@ -10,6 +10,17 @@ body {
     font-family: 'Ubuntu Mono', monospace;
 }
 
+h1 {
+    font-weight: 400;
+    width: 5em;
+    margin: auto;
+    text-align: center;
+    border: 2px solid gray;
+    border-radius: 8px;
+    background-color: #443d3d;
+    font-size: 1.8em;
+    padding: 5px;
+}
 
 nav {
     width: 100%;
@@ -21,14 +32,15 @@ nav ul {
     padding: 0;
     list-style: none;
     display: flex;
+    justify-content: space-between;
     text-align: center;
     flex-direction: row;
-    justify-content: space-around;
     font-size: 1.5em;
+    flex-wrap: wrap;
 }
 
 nav ul li {
-    flex-basis: 33.5%;
+    flex-basis: 25%;
 }
 
 nav ul li a {
@@ -41,11 +53,9 @@ nav ul li a {
     border-right: 2px solid gray;
 }
 
-nav ul li:last-child a {
-    border-right: 0;
-}
-
-body:has(#basic) nav ul:not(:hover) li:first-child a, body:has(#conversion) nav ul:not(:hover) li:nth-child(2) a {
+body:has(#basic) nav ul:not(:hover) li:first-child a, 
+body:has(#conversion) nav ul:not(:hover) li:nth-child(2) a,
+body:has(#formulas) nav ul:not(:hover) li:nth-child(3) a {
     margin-top: 5px;
     padding: 8px;
     color: #cccccc;
@@ -58,20 +68,10 @@ nav ul li:hover a {
     color: #cccccc;
 }
 
-h1 {
-    font-weight: 400;
-    width: 30%;
-    margin: auto;
-    text-align: center;
-    border: 2px solid gray;
-    border-radius: 8px;
-    background-color: #443d3d;
-}
-
 .calc_frame {
     margin: 2rem auto;
-    height: 40rem;
-    width: 40rem    ;
+    height: 8em;
+    width: 6em;
     background-color: #2d2d2f;
     border: 2px solid gray;
     border-radius: 20px;
@@ -81,11 +81,11 @@ h1 {
 }
 
 .calc_frame > h2 {
-    font-size: 1em;
+    font-size: 0.8em;
     text-align: end;
     width: 90%;
     margin: 15px auto;
-    padding: 20px;
+    padding: 12px;
     border: 2px solid gray;
     border-radius: 10px;
     background-color: #3d3e46;
@@ -104,7 +104,7 @@ h1 {
 
 .calc_frame ul li {
     font-size: 1em;
-    padding: 20px;
+    padding: 10px;
     margin: 5px;
     flex-basis: 33%;
     border: 2px solid gray;
@@ -128,7 +128,7 @@ h1 {
     list-style: none;
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 10em;
     margin: 25px auto;
     text-align: center;
 }
