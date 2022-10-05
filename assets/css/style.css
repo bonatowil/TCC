@@ -10,6 +10,7 @@ body {
     font-family: 'Ubuntu Mono', monospace;
 }
 
+
 nav {
     width: 100%;
     margin: 5px 0 0 0;
@@ -23,9 +24,6 @@ nav ul {
     text-align: center;
     flex-direction: row;
     justify-content: space-around;
-    border: 2px solid gray;
-    border-radius: 10px;
-    background-color: #443d3d;
     font-size: 1.5em;
 }
 
@@ -34,8 +32,10 @@ nav ul li {
 }
 
 nav ul li a {
+    border: 2px solid gray;
+    border-radius: 10px;
     display: block;
-    padding: 10px;
+    padding: 5px;
     text-decoration: none;
     color: white;
     border-right: 2px solid gray;
@@ -45,16 +45,17 @@ nav ul li:last-child a {
     border-right: 0;
 }
 
-nav ul li:hover {
-    background-color: #544b4b;
+body:has(#basic) nav ul:not(:hover) li:first-child a, body:has(#conversion) nav ul:not(:hover) li:nth-child(2) a {
+    margin-top: 5px;
+    padding: 8px;
+    color: #cccccc;
 }
 
-nav ul li:hover:first-child {
-    border-radius: 10px 0 0 10px;
-}
-
-nav ul li:hover:last-child {
-    border-radius: 0 10px 10px 0;
+nav ul li:hover a {
+    margin-top: 5px;
+    padding: 8px;
+    background-color: #1e1e20;
+    color: #cccccc;
 }
 
 h1 {
@@ -120,4 +121,27 @@ h1 {
 
 .calc_frame .row-4 ul li:first-child {
     flex-basis: 70%;
+}
+
+.conversion_list ul {
+    padding: 10px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: 25px auto;
+    text-align: center;
+}
+
+.conversion_list ul li {
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.conversion_list ul li:hover {
+    border-radius: 10px;
+    background-color: #1e1e20;
+    cursor: pointer;
 }
