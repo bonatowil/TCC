@@ -1,18 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
 * {
     box-sizing: border-box;
 }
-
 body {
+    /* overflow: hidden; */
     margin: 0;
     color: #bcbcbc;
     background-color: #151516;
     font-size: 1.35em;
-    font-family: 'Ubuntu Mono', monospace;
+    font-weight: 300;
+    font-family: 'Quicksand', sans-serif;
 }
 
 h1 {
-    font-weight: 400;
-    width: 5em;
+    font-weight: 600;
+    width: 10em;
     margin: auto;
     text-align: center;
     border: 2px solid gray;
@@ -25,6 +28,7 @@ h1 {
 nav {
     width: 100%;
     margin: 5px 0 0 0;
+    font-weight: 200;
 }
 
 nav ul {
@@ -59,6 +63,7 @@ body:has(#formulas) nav ul:not(:hover) li:nth-child(3) a {
     margin-top: 5px;
     padding: 8px;
     color: #cccccc;
+    font-weight: 500;
 }
 
 nav ul li:hover a {
@@ -66,11 +71,12 @@ nav ul li:hover a {
     padding: 8px;
     background-color: #1e1e20;
     color: #cccccc;
+    font-weight: 500;
 }
 
 .calc_frame {
     margin: 2rem auto;
-    height: 8em;
+    height: 7.9em;
     width: 6em;
     background-color: #2d2d2f;
     border: 2px solid gray;
@@ -83,7 +89,7 @@ nav ul li:hover a {
 .calc_frame > h2 {
     font-size: 0.8em;
     text-align: end;
-    width: 90%;
+    width: 93%;
     margin: 15px auto;
     padding: 12px;
     border: 2px solid gray;
@@ -92,7 +98,7 @@ nav ul li:hover a {
 }
 
 .calc_frame ul {
-    width: 90%;
+    width: 92%;
     margin: auto;
     text-align: center;
     padding: 0;
@@ -103,8 +109,8 @@ nav ul li:hover a {
 }
 
 .calc_frame ul li {
-    font-size: 1em;
-    padding: 10px;
+    font-size: .8em;
+    padding: 8px;
     margin: 5px;
     flex-basis: 33%;
     border: 2px solid gray;
@@ -114,6 +120,7 @@ nav ul li:hover a {
     box-shadow: 1px 2px 7px 1px #0000005b;
     width: 100%;
 }
+
 .calc_frame ul li:hover {
     background-color: #3d3e46;
     cursor: pointer;
