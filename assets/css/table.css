@@ -1,0 +1,76 @@
+:root {
+    --hydrogen: lightgreen;
+    --nonmetal: green;
+    --alkalimetal: orange;
+    --alkalineearthmetal: yellow;
+    --transitionmetal: palevioletred;
+    --othermetal: cyan;
+    --metalloid: skyblue;
+    --noblegas: blue;
+    --halogen: lightblue;
+    --lanthanide: pink;
+    --actinide: red;
+}
+
+.hydrogen {
+    color: lightgreen;
+}
+
+.alkalimetal {
+    color: orange;
+}
+
+.alkalineearthmetal {
+    color: yellow;
+}
+
+.noblegas {
+    color: darkblue;
+}
+
+.halogen {
+    color: aqua;
+}
+
+.nonmetal {
+    color: green;
+}
+
+.metalloid {
+    color: blue;
+}
+
+.othermetal {
+    color: darkcyan;
+}
+
+.lantanideos {
+    color: red;
+}
+
+.actinideos {
+    color: pink;
+}
+
+table {
+    border: transparent;
+    border-collapse: collapse;
+    margin: 1em auto;
+    font-size: 1.2em;
+    color: palevioletred
+}
+
+table tr td {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid gray;
+}
+
+table tr td.colspan {
+    border: transparent;
+}
+
+.blank-row td{
+    padding: 15px;
+    border: transparent;
+}
