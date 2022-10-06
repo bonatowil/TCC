@@ -48,7 +48,7 @@ nav ul {
 }
 
 nav ul li {
-    flex-basis: 25%;
+    flex-basis: 24.9%;
 }
 
 nav ul li a {
@@ -63,7 +63,8 @@ nav ul li a {
 
 body:has(#basic) nav ul:not(:hover) li:first-child a, 
 body:has(#conversion) nav ul:not(:hover) li:nth-child(2) a,
-body:has(#formulas) nav ul:not(:hover) li:nth-child(3) a {
+body:has(#formulas) nav ul:not(:hover) li:nth-child(3) a,
+body:has(#periodic-table) nav ul:not(:hover) li:nth-child(4) a {
     margin-top: 5px;
     padding: 8px;
     color: #cccccc;
@@ -134,7 +135,7 @@ nav ul li:hover a {
     flex-basis: 70%;
 }
 
-.conversion_list ul {
+.content_list ul {
     padding: 10px;
     list-style: none;
     display: flex;
@@ -144,14 +145,14 @@ nav ul li:hover a {
     text-align: center;
 }
 
-.conversion_list ul li {
+.content_list ul li {
     padding: 10px;
     border: 1px solid gray;
     border-radius: 5px;
     margin: 5px;
 }
 
-.conversion_list ul li:hover {
+.content_list ul li:hover {
     border-radius: 10px;
     background-color: #1e1e20;
     cursor: pointer;
