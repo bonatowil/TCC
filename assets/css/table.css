@@ -1,76 +1,196 @@
-:root {
-    --hydrogen: lightgreen;
-    --nonmetal: green;
-    --alkalimetal: orange;
-    --alkalineearthmetal: yellow;
-    --transitionmetal: palevioletred;
-    --othermetal: cyan;
-    --metalloid: skyblue;
-    --noblegas: blue;
-    --halogen: lightblue;
-    --lanthanide: pink;
-    --actinide: red;
+body {
+    overflow-y: scroll;
+    counter-reset: atomic_num;
+    --color: #00000000;
 }
 
-.hydrogen {
-    color: lightgreen;
-}
-
-.alkalimetal {
-    color: orange;
-}
-
-.alkalineearthmetal {
-    color: yellow;
-}
-
-.noblegas {
-    color: darkblue;
-}
-
-.halogen {
-    color: aqua;
-}
-
-.nonmetal {
-    color: green;
-}
-
-.metalloid {
-    color: blue;
-}
-
-.othermetal {
-    color: darkcyan;
-}
-
-.lantanideos {
-    color: red;
-}
-
-.actinideos {
-    color: pink;
+main {
+    display: flex;
 }
 
 table {
+    grid-area: table;
     border: transparent;
-    border-collapse: collapse;
-    margin: 1em auto;
-    font-size: 1.2em;
-    color: palevioletred
+    border-collapse: separate;
+    margin: 1em;
+    font-size: 1em;
 }
 
 table tr td {
     text-align: center;
     padding: 10px;
-    border: 1px solid gray;
+    background-color: #151516;
+    min-width: 60px;
+    max-width: 60px;
+    position: relative;
+    border-radius: 4px;
 }
+
+table tr td.lantanideos, td.actinideos {
+    font-size: 0.5em;
+    counter-increment: atomic_num 15;
+} 
+
+table tr td:not(.colspan, .lantanideos, .actinideos)::before {
+    display: flex;
+    height: 0.5em;
+    font-size: 0.5em;
+    position: relative;
+    bottom: 6px;
+    right: 3px;
+    counter-increment: atomic_num;
+    content: counter(atomic_num);
+}
+
+table tr td span {
+    padding-bottom: 2px;
+    display: flex;
+    justify-content: center;
+    height: 0.5em;
+    font-size: 0.4em;
+    font-weight: 900;
+    position: relative;
+}
+
+table tr td:not(.colspan):hover {
+    cursor: pointer;
+    transform: scale(1.35);
+    z-index: 1;
+    box-shadow: inset 0px 0px 5px var(--color);
+}
+
 
 table tr td.colspan {
     border: transparent;
 }
 
+table tr#lantanideos {
+    counter-reset: atomic_num 56;
+}
+table tr#actinideos {
+    counter-reset: atomic_num 88;
+}
+
 .blank-row td{
     padding: 15px;
-    border: transparent;
+}
+
+
+td.hydrogen, #hydrogen {
+    border: 1px solid #b8b7b7;
+    color: #b8b7b7 ;
+}
+.hydrogen:hover {
+    --color: #b8b7b7;
+}
+
+td.transmetal, #transmetal {
+    border: 1px solid #d227bb;
+    color: #d227bb;
+}
+.transmetal:hover {
+    --color: #d227bb;
+}
+
+td.alkalimetal, #alkalimetal {
+    border: 1px solid #F26430;
+    color: #F26430;
+}
+.alkalimetal:hover {
+    --color: #F26430;
+}
+
+td.alkalineearthmetal, #alkalineearthmetal {
+    border: 1px solid #fde74c;
+    color: #fde74c;
+}
+.alkalineearthmetal:hover {
+    --color: #fde74c;
+}
+
+td.noblegas, #noblegas {
+    border: 1px solid #8774ff;
+    color: #8774ff;
+}
+.noblegas:hover {
+    --color: #8774ff;
+}
+
+td.halogen, #halogen {
+    border: 1px solid #0fad61;
+    color: #0fad61;
+}
+.halogen:hover {
+    --color: #0fad61;
+}
+
+td.nonmetal, #nonmetal {
+    border: 1px solid #35ed35;
+    color: #35ed35;
+}
+.nonmetal:hover {
+    --color: #1ef81e;
+}
+
+td.metalloid, #metalloid {
+    border: 1px solid #7a3df4;
+    color: #7a3df4;
+}
+.metalloid:hover {
+    --color: #7a3df4;
+}
+
+td.othermetal, #othermetal {
+    border: 1px solid #58a4d3;
+    color: #58a4d3;
+}
+.othermetal:hover {
+    --color: #58a4d3;
+}
+
+
+.lantanideo, td.lantanideos, #lantanideo {
+    border: 1px solid #df1728;
+    color: #df1728;
+}
+.lantanideo:hover, .lantanideos:hover {
+    --color: #df1728;
+}
+
+.actinideo, td.actinideos, #actinideo {
+    border: 1px solid #1a47db;
+    color: #1a47db;
+}
+
+.actinideo:hover, .actinideos:hover {
+    --color: #1a47db;
+}
+
+.element {
+    margin: 2em auto;
+    height: 400px;
+    width: 320px;
+    border: 10px solid !important;
+    border-radius: 10px;
+    box-sizing: content-box;
+}
+
+.element .atomic_num {
+    text-align: initial;
+    font-size: 50px;
+    margin: 10px 0 10px 15px;
+}
+
+.element .symbol {
+    font-size: 60px;
+    text-align: center;
+}
+.element .name {
+    font-size: 40px;
+    text-align: center;
+}
+
+.element .atomic_mass {
+    font-size: 20px;
+    text-align: center;
 }

@@ -7,9 +7,70 @@
     <link rel="shortcut icon" href="../images/lab_icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/table.css">
+    <script>
+        function addEventos() {
+            var elements = {H:[1, 'Hydrogen', 1.008], He:[2, 'Hélio', 4.003], Li:[3, 'Lítio', 6.941], 
+            Be:[4,'Berílio', 9.012], B:[5, 'Boro', 10.811], C:[6, 'Carbono', 12.011], N:[7, 'Nitrogênio', 17.007],
+            O:[8, 'Oxigênio', 15.999], F:[9, 'Flúor', 18.998], Ne:[10, 'Nêonio', 20.18], Na:[11, 'Sódio', 22.990],
+            Mg:[12, 'Magnésio', 24.305], Al:[13, 'Alumínio', 26.982], Si:[14, 'Silício', 28.086],
+            P:[15, 'Fósforo', 30.974], S:[16, 'Enxofre', 32.065], Cl:[17, 'Cloro', 35.453],
+            Ar:[18, 'Argônio', 39.948], K:[19, 'Potássio', 39.098], Ca:[20, 'Cálcio', 40.078],
+            Sc:[21, 'Escândio', 44.956], Ti:[22, 'Titânio', 47.867], V:[23, 'Vanádio', 50.942],
+            Cr:[24, 'Cromo', 51.996], Mn:[25, 'Manganês', 54.938], Fe:[26, 'Ferro', 55.845], 
+            Co:[27, 'Cobalto', 58.933], Ni:[28, 'Níquel', 58.693], Cu:[29, 'Cobre', 63.546],
+            Zn:[30, 'Zinco', 65.409], Ga:[31, 'Gálio', 69.733], Ge:[32, 'Germânio', 72.640],
+            As:[33, 'Arsênio', 74.922], Se:[34, 'Selênio', 78.960], Br:[35, 'Bromo', 79.904],
+            Kr:[36, 'Criptônio', 83.798], Rb:[37, 'Rubídio', 85.468], Sr:[38, 'Estrôncio', 87.620],
+            Y:[39, 'Ítrio', 88.906], Zr:[40, 'Zircônio', 91.224], Nb:[41, 'Nióbio', 92.906],
+            Mo:[42, 'Molibdênio', 95.940], Tc:[43, 'Tecnécio', '[98]'], Ru:[44, 'Rutênio', 101.070],
+            Rh:[45, 'Ródio', 102.905], Pd:[46, 'Paládio', 106.420], Ag:[47, 'Prata', 107.868],
+            Cd:[48, 'Cádmio', 112.411], In:[49, 'Índio', 114.818], Sn:[50, 'Estanho', 118.710],
+            Sb:[51, 'Antimônio', 121.760], Te:[52, 'Telúrio', 127.600], I:[53, 'Iodo', 126.904],
+            Xe:[54, 'Xenônio', 131.293], Cs:[55, 'Césio', 132.905], Ba:[56, 'Bário', 137.327],
+            La:[57, 'Lantânio', 138.905], Ce:[58, 'Cério', 140.116], Pr:[59, 'Praseodímio', 140.908],
+            Nd:[60, 'Neodímio', 144.242], Pm:[61, 'Promécio', '[145]'], Sm:[62, 'Samário', 150.360],
+            Eu:[63, 'Európio', 151.964], Gd:[64, 'Gadolínio', 157.250], Tb:[65, 'Térbio', 158.925],
+            Dy:[66, 'Disprósio', 162.500], Ho:[67, 'Hólmio', 164.930], Er:[68, 'Érbio', 167.259],
+            Tm:[69, 'Túlio', 168.934], Yb:[70, 'Itérbio', 173.040], Lu:[71, 'Lutécio', 174.967],
+            Hf:[72, 'Háfnio', 178.490], Ta:[73, 'Tântalo', 180.948], W:[74, 'Tungstênio', 183.840],
+            Re:[75, 'Rênio', 186.207], Os:[76, 'Ósmio', 190.230], Ir:[77, 'Irídio', 192.217], 
+            Pt:[78, 'Platina', 195.084], Au:[79, 'Ouro', 196.967], Hg:[80, 'Mercúrio', 200.590],
+            Tl:[81, 'Tálio', 204.383], Pb:[82, 'Chumbo', 207.200], Bi:[83, 'Bismuto', 208.980],
+            Po:[84, 'Polônio', '[209]'], At:[85, 'Ástato', '[210]'], Rn:[86,  'Rádon', '[222]'],
+            Fr:[87,  'Frâncio', '[223]'], Ra:[88,  'Rádio', '[226]'], Ac:[89,  'Actínio', '[227]'],
+            Th:[90,  'Tório', 232.038], Pa:[91,  'Protactínio', 231.036], U:[92,  'Urânio', 238.029],
+            Np:[93,  'Netúnio', '[237]'], Pu:[94,  'Plutônio', '[244]'], Am:[95,  'Amerício', '[243]'],
+            Cm:[96,  'Cúrio', '[247]'], Bk:[97,  'Berquélio', '[247]'], Cf:[98,  'Califórnio', '[251]'],
+            Es:[99,  'Einstênio', '[252]'], Fm:[100,  'Férmio', '[257]'], Md:[101,  'Mendelévio', '[258]'],
+            No:[102,  'Nobélio', '[259]'], Lr:[103,  'Laurêncio', '[262]'], Rf:[104,  'Rutherfórdio', 261],
+            Db:[105,  'Dúbnio', '[262]'], Sg:[106,  'Seabórgio', '[266]'], Bh:[107,  'Bóhrio', '[264]'],
+            Hs:[108,  'Hássio', '[277]'], Mt:[109,  'Meitnério', '[268]'], Ds:[110,  'Darmstádio', '[271]'],
+            Rg:[111,  'Roentgênio', '[272]'], Cn:[112,  'Copernício', '[277]'], Nh:[113,  'Nihônio', '[284]'],
+            Fl:[114,  'Fleróvio', '[289]'], Mc:[115,  'Moscóvio', '[288]'], Lv:[116,  'Livermório', '[292]'],
+            Ts:[117,  'Tenessino', '[288]'], Og:[118,  'Oganessônio', '[294]']}
+            const element = document.querySelector('.element');
+            const atoms = document.querySelectorAll('td');
+            for (const atom of atoms) {
+                if (atom.className != 'colspan') {
+                    atom.addEventListener('click', () => {
+                        if (atom.getAttribute('id') != 'none') {
+                            element.setAttribute('id', atom.getAttribute('class'));
+                            let html = ` 
+                            <p class="atomic_num">${elements[atom.getAttribute('id')][0]}</p>
+                            <p class="symbol">${atom.getAttribute('id')}</p>
+                            <p class="name">${elements[atom.getAttribute('id')][1]}</p>
+                            <p class="atomic_mass">${elements[atom.getAttribute('id')][2]}</p>
+                            `;
+                            element.innerHTML = html;
+                        }
+                    })                    
+                }
+            }
+        }    
+    </script>
     <title>Tabela</title>
 </head>
-<body>
+<body onload="addEventos()">
     <nav>
         <nav>
             <ul>
@@ -21,153 +82,163 @@
         </nav>
     </nav>
     <h1 id="periodic-table">Tabela Periódica</h1>
-    <table border="1">
-        <tr>
-            <td class="hydrogen">H</td>
-            <td class="colspan" colspan="16"></td>
-            <td class="noblegas">He</td>
-        </tr>
-        <tr>
-            <td class="alkalimetal">Li</td>
-            <td class="alkalineearthmetal">Be</td>
-            <td class="colspan" colspan="10"></td>
-            <td class="metalloid">B</td>
-            <td class="nonmetal">C</td>
-            <td class="nonmetal">N</td>
-            <td class="nonmetal">O</td>
-            <td class="halogen">F</td>
-            <td class="noblegas">Ne</td>
-        </tr>
-        <tr>
-            <td class="alkalimetal">Na</td>
-            <td class="alkalineearthmetal">Mg</td>
-            <td class="colspan" colspan="10"></td>
-            <td class="othermetal">Al</td>
-            <td class="metalloid">Si</td>
-            <td class="nonmetal">P</td>
-            <td class="nonmetal">S</td>
-            <td class="halogen">Cl</td>
-            <td class="noblegas">Ar</td>
-        </tr>
-        <tr>
-            <td class="alkalimetal">K</td>
-            <td class="alkalineearthmetal">Ca</td>
-            <td>Sc</td>
-            <td>Ti</td>
-            <td>V</td>
-            <td>Cr</td>
-            <td>Mn</td>
-            <td>Fe</td>
-            <td>Co</td>
-            <td>Ni</td>
-            <td>Cu</td>
-            <td>Zn</td>
-            <td class="othermetal">Ga</td>
-            <td class="metalloid">Ge</td>
-            <td class="metalloid">As</td>
-            <td class="nonmetal">Se</td>
-            <td class="halogen">Br</td>
-            <td class="noblegas">Kr</td>
-        </tr>
-        <tr>
-            <td class="alkalimetal">Rb</td>
-            <td class="alkalineearthmetal">Sr</td>
-            <td>Y</td>
-            <td>Zr</td>
-            <td>Nb</td>
-            <td>Mo</td>
-            <td>Tc</td>
-            <td>Ru</td>
-            <td>Rh</td>
-            <td>Pd</td>
-            <td>Ag</td>
-            <td>Cd</td>
-            <td class="othermetal">In</td>
-            <td class="othermetal">Sn</td>
-            <td class="metalloid">Sb</td>
-            <td class="metalloid">Te</td>
-            <td class="halogen">I</td>
-            <td class="noblegas">Xe</td>
-        </tr>
-        <tr>
-            <td class="alkalimetal">Cs</td>
-            <td class="alkalineearthmetal">Ba</td>
-            <td class="lantanideos">*</td>
-            <td >Hf</td>
-            <td>Ta</td>
-            <td>W</td>
-            <td>Re</td>
-            <td>Os</td>
-            <td>Ir</td>
-            <td>Pt</td>
-            <td>Au</td>
-            <td>Hg</td>
-            <td class="othermetal">Tl</td>
-            <td class="othermetal">Pb</td>
-            <td class="othermetal">Bi</td>
-            <td class="metalloid">Po</td>
-            <td class="halogen">At</td>
-            <td class="noblegas">Rn</td>
-        </tr>
-        <tr>
-            <td class="alkalimetal">Fr</td>
-            <td class="alkalineearthmetal">Ra</td>
-            <td class="actinidios">**</td>
-            <td>Rf</td>
-            <td>Db</td>
-            <td>Sg</td>
-            <td>Bh</td>
-            <td>Hs</td>
-            <td>Mt</td>
-            <td>Ds</td>
-            <td>Rg</td>
-            <td>Cn</td>
-            <td class="othermetal">Nh</td>
-            <td class="othermetal">Fl</td>
-            <td class="othermetal">Mc</td>
-            <td class="othermetal">Lv</td>
-            <td class="halogen">Ts</td>
-            <td class="noblegas">Og</td>
-        </tr>
-        <tr class="blank-row">
-            <td class="colspan" colspan="20"></td>
-        </tr>
-        <tr class="lantanideos">
-            <td class="colspan" colspan="3"></td>
-            <td>La</td>
-            <td>Ce</td>
-            <td>Pr</td>
-            <td>Nd</td>
-            <td>Pm</td>
-            <td>Sm</td>
-            <td>Eu</td>
-            <td>Gd</td>
-            <td>Tb</td>
-            <td>Dy</td>
-            <td>Ho</td>
-            <td>Er</td>
-            <td>Tm</td>
-            <td>Yb</td>
-            <td>Lu</td>
-        </tr>
-        <tr class="actinideos">
-            <td class="colspan" colspan="3"></td>
-            <td>Ac</td>
-            <td>Th</td>
-            <td>Pa</td>
-            <td>U</td>
-            <td>Np</td>
-            <td>Pu</td>
-            <td>Am</td>
-            <td>Cm</td>
-            <td>Bk</td>
-            <td>Cf</td>
-            <td>Es</td>
-            <td>Fm</td>
-            <td>Md</td>
-            <td>No</td>
-            <td>Lr</td>
-        </tr>
-    </table>
+    <main>
+        <div class="table">
+            <table border="1">
+                <tr>
+                    <td id="H" class="hydrogen">H<span>Hidrogênio</span></td>
+                    <td class="colspan" colspan="16"></td>
+                    <td id="He" class="noblegas">He<span>Hélio</span></td>
+                </tr>
+                <tr>
+                    <td id="Li" class="alkalimetal">Li<span>Lítio</span></td>
+                    <td id="Be" class="alkalineearthmetal">Be<span>Berílio</span></td>
+                    <td class="colspan" colspan="10"></td>
+                    <td id="B" class="metalloid">B<span>Boro</span></td>
+                    <td id="C" class="nonmetal">C<span>Carbono</span></td>
+                    <td id="N" class="nonmetal">N<span>Nitrogênio</span></td>
+                    <td id="O" class="nonmetal">O<span>Oxigênio</span></td>
+                    <td id="F" class="halogen">F<span>Flúor</span></td>
+                    <td id="Ne" class="noblegas">Ne<span>Neônio</span></td>
+                </tr>
+                <tr>
+                    <td id="Na" class="alkalimetal">Na<span>Sódio</span></td>
+                    <td id="Mg" class="alkalineearthmetal">Mg<span>Magnésio</span></td>
+                    <td class="colspan" colspan="10"></td>
+                    <td id="Al" class="othermetal">Al<span>Alúminio</span></td>
+                    <td id="Si" class="metalloid">Si<span>Silício</span></td>
+                    <td id="P" class="nonmetal">P<span>Fósforo</span></td>
+                    <td id="S" class="nonmetal">S<span>Enxofre</span></td>
+                    <td id="Cl" class="halogen">Cl<span>Cloro</span></td>
+                    <td id="Ar" class="noblegas">Ar<span>Argônio</span></td>
+                </tr>
+                <tr>
+                    <td id="K" class="alkalimetal">K<span>Potássio</span></td>
+                    <td id="Ca" class="alkalineearthmetal">Ca<span>Cálcio</span></td>
+                    <td class="transmetal" id="Sc">Sc<span>Escândio</span></td>
+                    <td class="transmetal" id="Ti">Ti<span>Titânio</span></td>
+                    <td class="transmetal" id="V">V<span>Vanádio</span></td>
+                    <td class="transmetal" id="Cr">Cr<span>Crômio</span></td>
+                    <td class="transmetal" id="Mn">Mn<span>Manganês</span></td>
+                    <td class="transmetal" id="Fe">Fe<span>Ferro</span></td>
+                    <td class="transmetal" id="Co">Co<span>Cobalto</span></td>
+                    <td class="transmetal" id="Ni">Ni<span>Níquel</span></td>
+                    <td class="transmetal" id="Cu">Cu<span>Cobre</span></td>
+                    <td class="transmetal" id="Zn">Zn<span>Zinco</span></td>
+                    <td id="Ga" class="othermetal">Ga<span>Gálio</span><span></span></td>
+                    <td id="Ge" class="metalloid">Ge<span>Germânio</span></td>
+                    <td id="As" class="metalloid">As<span>Arsênio</span></td>
+                    <td id="Se" class="nonmetal">Se<span>Selênio</span></td>
+                    <td id="Br" class="halogen">Br<span>Bromo</span></td>
+                    <td id="Kr" class="noblegas">Kr<span>Criptônio</span></td>
+                </tr>
+                <tr>
+                    <td id="Rb" class="alkalimetal">Rb<span>Rubídio</span></td>
+                    <td id="Sr" class="alkalineearthmetal">Sr<span>Estrôncio</span></td>
+                    <td class="transmetal" id="Y">Y<span>Ítrio</span></td>
+                    <td class="transmetal" id="Zr">Zr<span>Zircônio</span></td>
+                    <td class="transmetal" id="Nb">Nb<span>Nióbio</span></td>
+                    <td class="transmetal" id="Mo">Mo<span>Molibdênio</span></td>
+                    <td class="transmetal" id="Tc">Tc<span>Tecnécio</span></td>
+                    <td class="transmetal" id="Ru">Ru<span>Rutênio</span></td>
+                    <td class="transmetal" id="Rh">Rh<span>Ródio</span></td>
+                    <td class="transmetal" id="Pd">Pd<span>Paládio</span></td>
+                    <td class="transmetal" id="Ag">Ag<span>Prata</span></td>
+                    <td class="transmetal" id="Cd">Cd<span>Cádmio</span></td>
+                    <td id="In" class="othermetal">In<span>Índio</span></td>
+                    <td id="Sn" class="othermetal">Sn<span>Estanho</span></td>
+                    <td id="Sb" class="metalloid">Sb<span>Antimônio</span></td>
+                    <td id="Te" class="metalloid">Te<span>Telúrio</span></td>
+                    <td id="I" class="halogen">I<span>Iodo</span></td>
+                    <td id="Xe" class="noblegas">Xe<span>Xenônio</span></td>
+                </tr>
+                <tr>
+                    <td id="Cs" class="alkalimetal">Cs<span>Césio</span></td>
+                    <td id="Ba" class="alkalineearthmetal">Ba<span>Bário</span></td>
+                    <td id="none" class="lantanideos">57~71</td>
+                    <td class="transmetal" id="Hf">Hf<span>Háfnio</span></td>
+                    <td class="transmetal" id="Ta">Ta<span>Tântalo</span></td>
+                    <td class="transmetal" id="W">W<span>Tungstênio</span></td>
+                    <td class="transmetal" id="Re">Re<span>Rênio</span></td>
+                    <td class="transmetal" id="Os">Os<span>Ósmio</span></td>
+                    <td class="transmetal" id="Ir">Ir<span>Irídio</span></td>
+                    <td class="transmetal" id="Pt">Pt<span>Platina</span></td>
+                    <td class="transmetal" id="Au">Au<span>Ouro</span></td>
+                    <td class="transmetal" id="Hg">Hg<span>Mercúrio</span></td>
+                    <td id="Tl" class="othermetal">Tl<span>Tálio</span></td>
+                    <td id="Pb" class="othermetal">Pb<span>Chumbo</span></td>
+                    <td id="Bi" class="othermetal">Bi<span>Bismuto</span></td>
+                    <td id="Po" class="metalloid">Po<span>Polônio</span></td>
+                    <td id="At" class="halogen">At<span>Aslato</span></td>
+                    <td id="Rn" class="noblegas">Rn<span>Radônio</span></td>
+                </tr>
+                <tr>
+                    <td id="Fr" class="alkalimetal">Fr<span>Frâncio</span></td>
+                    <td id="Ra" class="alkalineearthmetal">Ra<span>Rádio</span></td>
+                    <td id="none" class="actinideos">89~103</td>
+                    <td class="transmetal" id="Rf">Rf<span>Rutherfórdio</span></td>
+                    <td class="transmetal" id="Db">Db<span>Dúbnio</span></td>
+                    <td class="transmetal" id="Sg">Sg<span>Seabórgio</span></td>
+                    <td class="transmetal" id="Bh">Bh<span>Bóhrio</span></td>
+                    <td class="transmetal" id="Hs">Hs<span>Hássio</span></td>
+                    <td class="transmetal" id="Mt">Mt<span>Meitnério</span></td>
+                    <td class="transmetal" id="Ds">Ds<span>Darmstádtio</span></td>
+                    <td class="transmetal" id="Rg">Rg<span>Roentgênio</span></td>
+                    <td class="transmetal" id="Cn">Cn<span>Copernício</span></td>
+                    <td id="Nh" class="othermetal">Nh<span>Nihônio</span></td>
+                    <td id="Fl" class="othermetal">Fl<span>Fleróvio</span></td>
+                    <td id="Mc" class="othermetal">Mc<span>Moscóvio</span></td>
+                    <td id="Lv" class="othermetal">Lv<span>Livermório</span></td>
+                    <td id="Ts" class="halogen">Ts<span>Tenessino</span></td>
+                    <td id="Og" class="noblegas">Og<span>Oganessônio</span></td>
+                </tr>
+                <tr class="blank-row">
+                    <td class="colspan" colspan="20"></td>
+                </tr>
+                <tr id="lantanideos">
+                    <td class="colspan" colspan="3"></td>
+                    <td class="lantanideo" id="La">La<span>Lantânio</span></td>
+                    <td class="lantanideo" id="Ce">Ce<span>Cério</span></td>
+                    <td class="lantanideo" id="Pr">Pr<span>Praseodímio</span></td>
+                    <td class="lantanideo" id="Nd">Nd<span>Neodímio</span></td>
+                    <td class="lantanideo" id="Pm">Pm<span>Promécio</span></td>
+                    <td class="lantanideo" id="Sm">Sm<span>Samário</span></td>
+                    <td class="lantanideo" id="Eu">Eu<span>Európio</span></td>
+                    <td class="lantanideo" id="Gd">Gd<span>Gadolínio</span></td>
+                    <td class="lantanideo" id="Tb">Tb<span>Térbio</span></td>
+                    <td class="lantanideo" id="Dy">Dy<span>Disprósio</span></td>
+                    <td class="lantanideo" id="Ho">Ho<span>Hólmio</span></td>
+                    <td class="lantanideo" id="Er">Er<span>Érbio</span></td>
+                    <td class="lantanideo" id="Tm">Tm<span>Túlio</span></td>
+                    <td class="lantanideo" id="Yb">Yb<span>Itérbio</span></td>
+                    <td class="lantanideo" id="Lu">Lu<span>Lutécio</span></td>
+                </tr>
+                <tr id="actinideos">
+                    <td class="colspan" colspan="3"></td>
+                    <td class="actinideo" id="Ac">Ac<span>Actínio</span></td>
+                    <td class="actinideo" id="Th">Th<span>Thório</span></td>
+                    <td class="actinideo" id="Pa">Pa<span>Protactínio</span></td>
+                    <td class="actinideo" id="U">U<span>Urânio</span></td>
+                    <td class="actinideo" id="Np">Np<span>Netúnio</span></td>
+                    <td class="actinideo" id="Pu">Pu<span>Plutônio</span></td>
+                    <td class="actinideo" id="Am">Am<span>Amerício</span></td>
+                    <td class="actinideo" id="Cm">Cm<span>Cúrio</span></td>
+                    <td class="actinideo" id="Bk">Bk<span>Berquélio</span></td>
+                    <td class="actinideo" id="Cf">Cf<span>Califórnio</span></td>
+                    <td class="actinideo" id="Es">Es<span>Einstênio</span></td>
+                    <td class="actinideo" id="Fm">Fm<span>Férmio</span></td>
+                    <td class="actinideo" id="Md">Md<span>Mendelévio</span></td>
+                    <td class="actinideo" id="No">No<span>Nobélio</span></td>
+                    <td class="actinideo" id="Lr">Lr<span>Laurêncio</span></td>
+                </tr>
+            </table>
+        </div>
+        <div class="element">
+            <p class="atomic_num">1</p>
+            <p class="symbol">H</p>
+            <p class="name">Hidrogênio</p>
+            <p class="atomic_mass">1.008</p>
+        </div>
+    </main>
 </body>
 </html>
