@@ -57,25 +57,21 @@ nav ul li a {
     display: block;
     padding: 5px;
     text-decoration: none;
-    color: white;
+    color: #cccccc;
     border-right: 2px solid gray;
 }
 
 body:has(#basic) nav ul:not(:hover) li:first-child a, 
 body:has(#conversion) nav ul:not(:hover) li:nth-child(2) a,
 body:has(#formulas) nav ul:not(:hover) li:nth-child(3) a,
-body:has(#periodic-table) nav ul:not(:hover) li:nth-child(4) a {
-    margin-top: 5px;
-    padding: 8px;
-    color: #cccccc;
+body:has(#periodic-table) nav ul:not(:hover) li:nth-child(4) a{
+    color: white;
     font-weight: 500;
 }
 
 nav ul li:hover a {
-    margin-top: 5px;
-    padding: 8px;
     background-color: #1e1e20;
-    color: #cccccc;
+    color: white;
     font-weight: 500;
 }
 
@@ -156,4 +152,9 @@ nav ul li:hover a {
     border-radius: 10px;
     background-color: #1e1e20;
     cursor: pointer;
+}
+
+.content_list ul li a {
+    text-decoration: none;
+    color: white;
 }
