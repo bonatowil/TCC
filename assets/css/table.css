@@ -170,9 +170,8 @@ td.othermetal, #othermetal {
     margin: 2em auto;
     height: 400px;
     width: 320px;
-    border: 10px solid !important;
+    outline: 10px solid !important;
     border-radius: 10px;
-    box-sizing: content-box;
 }
 
 .element .atomic_num {
