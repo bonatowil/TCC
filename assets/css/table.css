@@ -186,6 +186,7 @@ td.othermetal, #othermetal {
     text-align: center;
 }
 .element .name {
+    min-width: 320px;
     font-size: 40px;
     text-align: center;
 }
