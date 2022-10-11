@@ -4,7 +4,8 @@
     box-sizing: border-box;
 }
 body {
-    overflow: hidden;
+    caret-color: transparent;
+    overflow: auto;
     margin: 0;
     color: #bcbcbc;
     background-color: #151516;
@@ -30,12 +31,15 @@ h1#formulas {
 }
 
 nav {
+    user-select: none;
     width: 100%;
     margin: 5px 0 0 0;
     font-weight: 200;
 }
 
 nav ul {
+    border: 2px solid gray;
+    border-radius: 10px;
     margin: 0 10px 20px;
     padding: 0;
     list-style: none;
@@ -48,16 +52,18 @@ nav ul {
 }
 
 nav ul li {
-    flex-basis: 24.9%;
+    flex-basis: 25%;
 }
 
 nav ul li a {
-    border: 2px solid gray;
-    border-radius: 10px;
     display: block;
     text-decoration: none;
     color: #cccccc;
+}
+
+nav ul li:not(:last-child) a {
     border-right: 2px solid gray;
+
 }
 
 body:has(#basic) nav ul:not(:hover) li:first-child a, 
@@ -69,68 +75,12 @@ body:has(#periodic-table) nav ul:not(:hover) li:nth-child(4) a{
 }
 
 nav ul li:hover a {
-    background-color: #1e1e20;
     color: white;
     font-weight: 500;
 }
 
-.calc_frame {
-    margin: 2rem auto;
-    height: 7.9em;
-    width: 6em;
-    background-color: #2d2d2f;
-    border: 2px solid gray;
-    border-radius: 20px;
-    flex-wrap: wrap;
-    font-size: 3em;
-    position: relative;
-}
-
-.calc_frame > h2 {
-    font-size: 0.8em;
-    text-align: end;
-    width: 93%;
-    margin: 15px auto;
-    padding: 12px;
-    border: 2px solid gray;
-    border-radius: 10px;
-    background-color: #3d3e46;
-}
-
-.calc_frame ul {
-    width: 92%;
-    margin: auto;
-    text-align: center;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.calc_frame ul li {
-    font-size: .8em;
-    padding: 8px;
-    margin: 5px;
-    flex-basis: 33%;
-    border: 2px solid gray;
-    border-radius: 15px;
-    flex-basis: 33%;
-    font-weight: 900;
-    box-shadow: 1px 2px 7px 1px #0000005b;
-    width: 100%;
-}
-
-.calc_frame ul li:hover {
-    background-color: #3d3e46;
-    cursor: pointer;
-}
-
-.calc_frame .row-4 ul li:first-child {
-    flex-basis: 70%;
-}
-
 .content_list ul {
+    color: #cccccc;
     padding: 10px;
     list-style: none;
     display: flex;
@@ -140,20 +90,19 @@ nav ul li:hover a {
     text-align: center;
 }
 
-.content_list ul li {
-    padding: 10px;
+.content_list ul li a {
     border: 1px solid gray;
     border-radius: 5px;
     margin: 5px;
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+    color: #cccccc;
 }
 
-.content_list ul li:hover {
-    border-radius: 10px;
+.content_list ul li a:hover{
+    border-radius: 8px;
+    color: white;
     background-color: #1e1e20;
     cursor: pointer;
-}
-
-.content_list ul li a {
-    text-decoration: none;
-    color: white;
 }
