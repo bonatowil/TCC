@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=1024">
-    <link rel="shortcut icon" href="../images/lab_icon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/images/lab_icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/table.css">
     <script>
-        function addEventos() {
+        function randomFloat(min, max) { // min and max included 
+            return Math.floor(Math.random() * (max - min + 1) + min)
+        }
+        function ElementHighlight() {
             var elements = {H:[1, 'Hydrogen', 1.008], He:[2, 'Hélio', 4.003], Li:[3, 'Lítio', 6.941], 
             Be:[4,'Berílio', 9.012], B:[5, 'Boro', 10.811], C:[6, 'Carbono', 12.011], N:[7, 'Nitrogênio', 17.007],
             O:[8, 'Oxigênio', 15.999], F:[9, 'Flúor', 18.998], Ne:[10, 'Nêonio', 20.18], Na:[11, 'Sódio', 22.990],
@@ -48,6 +51,7 @@
             Rg:[111,  'Roentgênio', '[272]'], Cn:[112,  'Copernício', '[277]'], Nh:[113,  'Nihônio', '[284]'],
             Fl:[114,  'Fleróvio', '[289]'], Mc:[115,  'Moscóvio', '[288]'], Lv:[116,  'Livermório', '[292]'],
             Ts:[117,  'Tenessino', '[288]'], Og:[118,  'Oganessônio', '[294]']}
+            const opacity = randomFloat(1, 5)
             const element = document.querySelector('.element');
             const atoms = document.querySelectorAll('td');
             for (const atom of atoms) {
@@ -70,7 +74,7 @@
     </script>
     <title>Tabela</title>
 </head>
-<body onload="addEventos()">
+<body onload="ElementHighlight()">
     <nav>
         <nav>
             <ul>
