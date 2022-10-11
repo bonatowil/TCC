@@ -1,3 +1,7 @@
+:root {
+    --opacity: 200ms;
+}
+
 body {
     overflow-y: scroll;
     counter-reset: atomic_num;
@@ -8,6 +12,7 @@ main {
     display: flex;
 }
 
+
 table {
     grid-area: table;
     border: transparent;
@@ -15,6 +20,7 @@ table {
     margin: 1em;
     font-size: 1em;
 }
+
 
 table tr td {
     text-align: center;
@@ -56,7 +62,7 @@ table tr td:not(.colspan):hover {
     cursor: pointer;
     transform: scale(1.35);
     z-index: 1;
-    box-shadow: inset 0px 0px 5px var(--color);
+    box-shadow: inset 0px 0px 5px var(--color), 0px 0px 5px var(--color);
 }
 
 
@@ -172,6 +178,8 @@ td.othermetal, #othermetal {
     width: 320px;
     outline: 10px solid !important;
     border-radius: 10px;
+    caret-color: transparent;
+    position: relative;
 }
 
 .element .atomic_num {
@@ -180,17 +188,52 @@ td.othermetal, #othermetal {
     margin: 10px 0 10px 15px;
 }
 
+.element .atomic_num::after {
+    content: ' Número Atômico';
+    position: relative;
+    bottom: .45em;
+    font-size: 0.4em;
+    opacity: 40%;
+}
+
 .element .symbol {
     font-size: 60px;
     text-align: center;
+    margin: 40px;
 }
+
+.element .symbol::after {
+    content: 'Símbolo';
+    position: absolute;
+    top: 45%;
+    right: 35%;
+    font-size: 0.4em;
+    opacity: 40%;
+
+}
+
 .element .name {
+    margin: 0;
     min-width: 320px;
     font-size: 40px;
     text-align: center;
 }
 
+.element .name::after {
+    content: 'Nome';
+    display: block;
+    font-size: 0.4em;
+    opacity: 40%;
+}
+
 .element .atomic_mass {
     font-size: 20px;
     text-align: center;
+}
+
+.element .atomic_mass::after {
+    content: 'Massa Atômica';
+    display: block;
+    font-size: 0.7em;
+    opacity: 40%;
 }
