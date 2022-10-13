@@ -33,15 +33,14 @@ h1#formulas {
 nav {
     user-select: none;
     width: 100%;
-    margin: 5px 0 0 0;
     font-weight: 200;
+    background-color: #131315;
 }
 
 nav ul {
-    border: 2px solid gray;
-    border-radius: 10px;
-    margin: 0 10px 20px;
-    padding: 0;
+    margin: 0 0 1em 0;
+    padding: .8em 0;
+    box-shadow: 0 0 2px white;
     list-style: none;
     display: flex;
     justify-content: space-between;
@@ -56,25 +55,36 @@ nav ul li {
 }
 
 nav ul li a {
-    display: block;
+    padding: 0 10px;
+    position: relative;
     text-decoration: none;
     color: #cccccc;
 }
 
-nav ul li:not(:last-child) a {
-    border-right: 2px solid gray;
-
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0.1em;
+    background-color: #ccc;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: scale(0, 1);
+    transition: all 250ms ease-in-out;
 }
 
-body:has(#basic) nav ul:not(:hover) li:first-child a, 
-body:has(#conversion) nav ul:not(:hover) li:nth-child(2) a,
-body:has(#formulas) nav ul:not(:hover) li:nth-child(3) a,
-body:has(#periodic-table) nav ul:not(:hover) li:nth-child(4) a{
+nav ul li a:hover::after {
+    transform: scale(1, 1);
+}
+
+
+ul:not(:hover) .nav-highlight a{
     color: white;
     font-weight: 500;
 }
 
-nav ul li:hover a {
+nav ul li a:hover {
     color: white;
     font-weight: 500;
 }
