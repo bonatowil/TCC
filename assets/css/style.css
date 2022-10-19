@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
+:root {
+    --jet: #353535ff;
+    --ming: #3c6e71ff;
+    --white: #ffffffff;
+    --gainsboro: #d9d9d9ff;
+    --indigo-dye: #284b63ff;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -7,8 +15,10 @@ body {
     caret-color: transparent;
     overflow: auto;
     margin: 0;
-    color: #bcbcbc;
-    background-color: #151516;
+    /* color: #bcbcbc; */
+    color: #222;
+    /* background-color: #151516; */
+    background-color: #fff;
     font-size: 1.35em;
     font-weight: 400;
     font-family: 'Quicksand', sans-serif;
@@ -19,9 +29,10 @@ h1 {
     width: 10em;
     margin: auto;
     text-align: center;
-    border: 2px solid gray;
+    /* border: 2px solid gray; */
     border-radius: 8px;
-    background-color: #443d3d;
+    background-color: navy;
+    color: white;
     font-size: 1.8em;
     padding: 5px;
 }
@@ -34,7 +45,7 @@ nav {
     user-select: none;
     width: 100%;
     font-weight: 200;
-    background-color: #131315;
+    background-color: navy;
 }
 
 nav ul {
@@ -90,7 +101,7 @@ nav ul li a:hover {
 }
 
 .content_list ul {
-    color: #cccccc;
+    /* color: #cccccc; */
     padding: 10px;
     list-style: none;
     display: flex;
@@ -101,18 +112,18 @@ nav ul li a:hover {
 }
 
 .content_list ul li a {
-    border: 1px solid gray;
+    border: 1px solid navy;
     border-radius: 5px;
     margin: 5px;
     padding: 10px;
     display: block;
     text-decoration: none;
-    color: #cccccc;
+    /* color: #cccccc; */
+    color: #222;
 }
 
 .content_list ul li a:hover{
     border-radius: 8px;
-    color: white;
-    background-color: #1e1e20;
+    background-color: rgb(225, 236, 243);
     cursor: pointer;
 }

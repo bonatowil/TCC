@@ -10,6 +10,7 @@ body {
 
 main {
     display: flex;
+    animation: blur-in 200ms ease forwards
 }
 
 
@@ -19,13 +20,14 @@ table {
     border-collapse: separate;
     margin: 1em;
     font-size: 1em;
+
 }
 
 
 table tr td {
     text-align: center;
     padding: 10px;
-    background-color: #151516;
+    background-color: #fff;
     min-width: 60px;
     max-width: 60px;
     position: relative;
@@ -236,4 +238,13 @@ td.othermetal, #othermetal {
     display: block;
     font-size: 0.7em;
     opacity: 40%;
+}
+
+@keyframes blur-in {
+    from {
+        filter: blur(1rem);
+    }
+    to {
+        filter: blur(0);
+    }
 }
