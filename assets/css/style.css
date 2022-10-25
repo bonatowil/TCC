@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --jet: #353535ff;
-    --ming: #3c6e71ff;
-    --white: #ffffffff;
-    --gainsboro: #d9d9d9ff;
-    --indigo-dye: #284b63ff;
+    --background-color: #221D23;
+    --raisin-black: #221D23;
+    --jet: #353535;
+    --ming: #3c6e71;
+    --gainsboro: #d9d9d9;
+    --indigo-dye: #284b63;
+    --oxford-blue: #04052E;
 }
+
 
 * {
     box-sizing: border-box;
@@ -15,10 +18,7 @@ body {
     caret-color: transparent;
     overflow: auto;
     margin: 0;
-    /* color: #bcbcbc; */
-    color: #222;
-    /* background-color: #151516; */
-    background-color: #fff;
+    background-color: var(--background-color);
     font-size: 1.35em;
     font-weight: 400;
     font-family: 'Quicksand', sans-serif;
@@ -29,9 +29,9 @@ h1 {
     width: 10em;
     margin: auto;
     text-align: center;
-    /* border: 2px solid gray; */
     border-radius: 8px;
-    background-color: navy;
+    border: 1px solid var(--gainsboro);
+    background-color: var(--indigo-dye);
     color: white;
     font-size: 1.8em;
     padding: 5px;
@@ -42,42 +42,31 @@ h1#formulas {
 }
 
 nav {
-    user-select: none;
-    width: 100%;
-    font-weight: 200;
-    background-color: navy;
-}
-
-nav ul {
-    margin: 0 0 1em 0;
-    padding: .8em 0;
-    box-shadow: 0 0 2px white;
-    list-style: none;
     display: flex;
-    justify-content: space-between;
+    color: var(--gainsboro);
     text-align: center;
-    flex-direction: row;
-    font-size: 1.5em;
-    flex-wrap: wrap;
+    padding: 5vmin;
+    background-color: #04052eba;
+    box-shadow: 0 0 20px var(--oxford-blue);
+    margin-bottom: 1.5vmax;
+}
+nav div {
+    flex-basis: calc(100% / 5);
 }
 
-nav ul li {
-    flex-basis: 25%;
-}
-
-nav ul li a {
-    padding: 0 10px;
+nav div a {
     position: relative;
+    padding: 0 2vmin;
     text-decoration: none;
-    color: #cccccc;
+    color: var(--gainsboro);
 }
 
-nav ul li a::after {
+nav div a::after {
     content: "";
     position: absolute;
     width: 100%;
-    height: 0.1em;
-    background-color: #ccc;
+    height: 1px;
+    background-color: white;
     left: 0;
     right: 0;
     bottom: 0;
@@ -85,23 +74,17 @@ nav ul li a::after {
     transition: all 250ms ease-in-out;
 }
 
-nav ul li a:hover::after {
+nav div a:hover::after {
     transform: scale(1, 1);
 }
 
 
-ul:not(:hover) .nav-highlight a{
-    color: white;
-    font-weight: 500;
-}
-
-nav ul li a:hover {
-    color: white;
-    font-weight: 500;
+nav .logo {
+    padding: 0 1vmin;
+    text-align: start;
 }
 
 .content_list ul {
-    /* color: #cccccc; */
     padding: 10px;
     list-style: none;
     display: flex;
@@ -112,18 +95,20 @@ nav ul li a:hover {
 }
 
 .content_list ul li a {
-    border: 1px solid navy;
+    background-color: var(--indigo-dye);
+    color: var(--gainsboro);
+    border: 1px solid var(--gainsboro);
     border-radius: 5px;
     margin: 5px;
     padding: 10px;
     display: block;
     text-decoration: none;
-    /* color: #cccccc; */
-    color: #222;
 }
 
 .content_list ul li a:hover{
     border-radius: 8px;
-    background-color: rgb(225, 236, 243);
+    color: var(--gainsboro);
+    background-color: var(--indigo-dye);
+    filter: opacity(.9);
     cursor: pointer;
 }

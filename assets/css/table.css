@@ -27,7 +27,7 @@ table {
 table tr td {
     text-align: center;
     padding: 10px;
-    background-color: #fff;
+    background-color: var(--background-color);
     min-width: 60px;
     max-width: 60px;
     position: relative;
@@ -175,6 +175,7 @@ td.othermetal, #othermetal {
 }
 
 .element {
+    color: #b8b7b7;
     margin: 2em auto;
     height: 400px;
     width: 320px;
