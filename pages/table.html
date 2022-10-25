@@ -12,7 +12,7 @@
             return Math.floor(Math.random() * (max - min + 1) + min)
         }
         function ElementHighlight() {
-            var elements = {H:[1, 'Hydrogen', 1.008], He:[2, 'Hélio', 4.003], Li:[3, 'Lítio', 6.941], 
+            var elements = {H:[1, 'Hidrogênio', 1.008], He:[2, 'Hélio', 4.003], Li:[3, 'Lítio', 6.941], 
             Be:[4,'Berílio', 9.012], B:[5, 'Boro', 10.811], C:[6, 'Carbono', 12.011], N:[7, 'Nitrogênio', 17.007],
             O:[8, 'Oxigênio', 15.999], F:[9, 'Flúor', 18.998], Ne:[10, 'Nêonio', 20.18], Na:[11, 'Sódio', 22.990],
             Mg:[12, 'Magnésio', 24.305], Al:[13, 'Alumínio', 26.982], Si:[14, 'Silício', 28.086],
@@ -76,14 +76,11 @@
 </head>
 <body onload="ElementHighlight()">
     <nav>
-        <nav>
-            <ul>
-                <li><a href="../index.html">Básica</a></li>
-                <li><a href="conversion.html">Conversão</a></li>
-                <li><a href="formulas.html">Química</a></li>
-                <li class="nav-highlight"><a href="table.html">Tabela Periódica</a></li>
-            </ul>
-        </nav>
+        <div class="logo">softec.</div>
+        <div class="basic"><a href="../index.html">CALCULADORA</a></div>
+        <div class="conversion"><a href="conversion.html">CONVERSÃO</a></div>
+        <div class="formulas"><a href="formulas.html">FORMULAS</a></div>
+        <div class="table"><a href="table.html">TABELA PERIÓDICA</a></div>
     </nav>
     <h1>Tabela Periódica</h1>
     <main>

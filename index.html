@@ -7,17 +7,17 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/calculadora.css">
     <link rel="shortcut icon" href="assets/images/lab_icon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/034f143d64.js" crossorigin="anonymous"></script>
     <script src="assets/script/script.js" defer></script>
     <title>Lab Shortcut</title>
 </head>
 <body onload="Calculator()">
     <nav>
-        <ul>
-            <li class="nav-highlight"><a href="index.html">Básica</a></li>
-            <li><a href="pages/conversion.html">Conversão</a></li>
-            <li><a href="pages/formulas.html">Química</a></li>
-            <li><a href="pages/table.html">Tabela Periódica</a></li>
-        </ul>
+        <div class="logo">softec.</div>
+        <div class="basic"><a href="#">CALCULADORA</a></div>
+        <div class="conversion"><a href="pages/conversion.html">CONVERSÃO</a></div>
+        <div class="formulas"><a href="pages/formulas.html">FORMULAS</a></div>
+        <div class="table"><a href="pages/table.html">TABELA PERIÓDICA</a></div>
     </nav>
     <h1 id="basic">BÁSICA</h1>
     <div class="calculator-grid">
@@ -26,7 +26,7 @@
             <div data-current-operand class="current-operand"></div>
         </div>
         <button data-all-clear class="span-two first">AC</button>
-        <button data-delete><span style="border: 3px solid rgb(255, 255, 255, 0.75); padding: 1px 10px;">X</span></button>
+        <button data-delete><span><i class="fa-solid fa-delete-left"></i></span></button>
         <button class="last" data-operation>÷</button>
         <button class="first" data-number>1</button>
         <button data-number>2</button>
