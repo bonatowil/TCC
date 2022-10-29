@@ -10,7 +10,6 @@ body {
 
 main {
     display: flex;
-    animation: blur-in 200ms ease forwards
 }
 
 
@@ -62,7 +61,7 @@ table tr td span {
 
 table tr td:not(.colspan):hover {
     cursor: pointer;
-    transform: scale(1.35);
+    animation: scale-up 150ms ease-in-out forwards;
     z-index: 1;
     box-shadow: inset 0px 0px 5px var(--color), 0px 0px 5px var(--color);
 }
@@ -241,11 +240,18 @@ td.othermetal, #othermetal {
     opacity: 40%;
 }
 
-@keyframes blur-in {
+@keyframes scale-up {
+    to {
+        transform: scale(1.35);
+        filter: brightness(1.2) saturate(1.5);
+    }
+}
+
+@keyframes element {
     from {
-        filter: blur(1rem);
+        filter: brightness(.5) opacity(.5);
     }
     to {
-        filter: blur(0);
+        filter: brightness(1) opacity(1);
     }
 }

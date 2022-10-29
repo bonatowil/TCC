@@ -51,6 +51,16 @@
             Rg:[111,  'Roentgênio', '[272]'], Cn:[112,  'Copernício', '[277]'], Nh:[113,  'Nihônio', '[284]'],
             Fl:[114,  'Fleróvio', '[289]'], Mc:[115,  'Moscóvio', '[288]'], Lv:[116,  'Livermório', '[292]'],
             Ts:[117,  'Tenessino', '[288]'], Og:[118,  'Oganessônio', '[294]']}
+            const elementAnimation = [
+                { filter: 'opacity(0)', transform: 'scale(.97)'},
+                { filter: 'opacity(1)', transform: 'scale(1)'}
+            ];
+
+            const elementTiming = {
+                duration: 100,
+                iterations: 1,
+            }
+
             const opacity = randomFloat(1, 5)
             const element = document.querySelector('.element');
             const atoms = document.querySelectorAll('td');
@@ -58,6 +68,7 @@
                 if (atom.className != 'colspan') {
                     atom.addEventListener('click', () => {
                         if (atom.getAttribute('id') != 'none') {
+                            element.animate(elementAnimation, elementTiming)
                             element.setAttribute('id', atom.getAttribute('class'));
                             let html = ` 
                             <p class="atomic_num">${elements[atom.getAttribute('id')][0]}</p>
@@ -76,13 +87,12 @@
 </head>
 <body onload="ElementHighlight()">
     <nav>
-        <div class="logo">softec.</div>
-        <div class="basic"><a class="link" href="../index.html">CALCULADORA</a></div>
-        <div class="conversion"><a class="link" href="conversion.html">CONVERSÃO</a></div>
-        <div class="formulas"><a class="link" href="formulas.html">FORMULAS</a></div>
-        <div class="table"><a class="link" href="table.html">TABELA PERIÓDICA</a></div>
+        <div class="logo">Softec</div>
+        <div class="basic"><a class="link" href="../index.html">Básico</a></div>
+        <div class="conversion"><a class="link" href="advanced.html">Avançado</a></div>
+        <div class="table"><a class="link" href="table.html">Tabela Periódica</a></div>
     </nav>
-    <h1>Tabela Periódica</h1>
+    <h2><span>Tabela Periódica</span></h2>
     <main>
         <div class="table">
             <table border="1">

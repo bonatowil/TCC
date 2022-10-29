@@ -15,7 +15,6 @@
     box-sizing: border-box;
 }
 body {
-    counter-reset: list-num 1;
     caret-color: transparent;
     overflow: auto;
     margin: 0;
@@ -25,21 +24,24 @@ body {
     font-family: 'Quicksand', sans-serif;
 }
 
-h1 {
+h2 {
     font-weight: 400;
     width: 10em;
     margin: auto;
     text-align: center;
-    border-radius: 8px;
-    border: 1px solid var(--gainsboro);
-    background-color: var(--indigo-dye);
-    color: white;
+    border-radius: 20px ;
+    border: 2px solid var(--ming);
     font-size: 1.8em;
     padding: 5px;
+    backdrop-filter: brightness(.9);
 }
 
-h1#formulas {
-    width: 12em;
+h2 span {
+    background-image: radial-gradient(var(--ming), var(--indigo-dye));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: brightness(1.5);
 }
 
 nav {
@@ -47,15 +49,33 @@ nav {
     gap: 1vmax;
     color: var(--gainsboro);
     text-align: center;
-    padding: 3vmax;
-    background-color: #04052eba;
-    box-shadow: 0 0 20px var(--oxford-blue);
-    margin-bottom: 1vmax;
+    padding: 1vmax;
+    margin-bottom: 2vmax;
+    position: relative;
 }
+
+nav::after {
+    content: "";
+    width: 75%;
+    position: absolute;
+    background-image: linear-gradient(to right, 
+        var(--background-color),
+        var(--ming), 
+        var(--indigo-dye), 
+        var(--background-color));
+    height: 1px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    /* filter: brightness(2); */
+}
+
 nav div {
     display: grid;
     place-items: center;
-    flex-basis: calc(100% / 6);
+    flex-basis: calc(100% / 4);
+    font-weight: 700;
+    
 }
 
 nav div a {
@@ -84,73 +104,87 @@ a.link:hover::after {
     transform: scale(1, 1);
 }
 
+nav a:hover {
+    animation: scale 100ms ease-in-out forwards;
+}
 
 nav div.logo {
+    font-size: 2rem;
+    padding-left: 2vmax;
     display: grid;
     justify-items: start;
     align-items: center;
+    background-image: linear-gradient(to right, var(--ming), var(--indigo-dye), var(--indigo-dye), var(--indigo-dye));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: brightness(2);
+
+}
+
+nav div.table {
+    padding-right: 2vmax;
+    display: grid;
+    justify-items: end;
+    align-items: center;
+}
+
+.content_list:not(:last-of-type) {
+    margin-bottom: 5vmax;
 }
 
 .content_list ul {
-    padding: 10px;
+    padding: 0 2rem;
     list-style: none;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
-    margin: 25px auto;
-    text-align: center;
-    gap: 10px;
+    flex-direction: row;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
 .content_list ul li {
     display: flex;
+    flex-direction: column;
     text-align: center;
     align-items: center;
-    width: 100%;
     border: 1px solid #54b3d6;
     border-radius: 10px;
+    flex-basis: calc(25% - 15px);
+    backdrop-filter: brightness(1.2 );
+    box-shadow: 1px 1px 5px rgba(173, 216, 230, 0.5); 
 }
 
 
 .content_list ul li a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    aspect-ratio: 1.2 / 1;
     padding: 1vmax;
     font-weight: 900;
     width: 100%;
-    counter-increment: list-num;
     margin: 5px;
-    display: inline-block;
     text-decoration: none;
-    background-image: linear-gradient(
-        to right,
-        #54b3d6,
-        #54b3d6 50%,
-        #000 50%
-      );  
-    background-size: 200% 100%;
-    position: relative;
-    background-clip: auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #54b3d6;
 }
-  
-.content_list ul li a:before{
-    content: '';
-    background: #54b3d6;
-    display: block;
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    width: 0;
-    height: 3px;
-    transition: all 0.3s linear;
+
+.content_list ul li a span {
+    color: #808080;
+    opacity: .5;
 }
-  
+.content_list ul li img {
+    width: 80%;
+    aspect-ratio: 3 / 1;
+    margin: 0 auto;
+}
+
 .content_list ul li a:hover {
-   background-position: 0;
+    animation: scale 150ms ease-in-out forwards;
 }
-  
-.content_list ul li a:hover::before{
-    width: 100%;
-    border-radius: 100vh;
+
+@keyframes scale {
+    to {
+        transform: scale(1.1);
+    }
 }

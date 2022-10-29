@@ -41,16 +41,16 @@ button.first {
 }
 
 button.last.diagonal {
-    border-radius: 0 0 5px 0;
+    border-radius: 0 0 20px 0;
 }
 
 button.first.diagonal {
-    border-radius: 0 0 0 5px;
+    border-radius: 0 0 0 20px;
 }
 
 .output {
     grid-column: 1 / -1;
-    border-radius: 10px 10px 0 0;
+    border-radius: 20px 20px 0 0;
     background-color: hwb(0 0% 100% / 0.75);
     display: flex;
     align-items: flex-end;
