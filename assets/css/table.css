@@ -14,6 +14,7 @@ main {
 
 
 table {
+    user-select: none;
     grid-area: table;
     border: transparent;
     border-collapse: separate;
@@ -180,8 +181,9 @@ td.othermetal, #othermetal {
     width: 320px;
     outline: 10px solid !important;
     border-radius: 10px;
-    caret-color: transparent;
+    /* caret-color: transparent; */
     position: relative;
+    /* user-select: none; */
 }
 
 .element .atomic_num {
