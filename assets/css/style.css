@@ -19,7 +19,7 @@ body {
     overflow: auto;
     margin: 0;
     background-color: var(--background-color);
-    font-size: 1.35em;
+    font-size: calc(.5vmax + .8rem);
     font-weight: 400;
     font-family: 'Quicksand', sans-serif;
 }
