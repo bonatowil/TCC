@@ -9,15 +9,15 @@
 # T = Temperatura em Kelvin
 # Eu nao tenho certeza de como esse codigo foi feito, favor nao mexer.
 
-def claperyon(const="mmHg", p=0, v=0, n=0, r=0, t=0):
+def clapeyron(constante="mmHg", p=0, v=0, n=0, r=0, t=0):
                                       #variavel a ser feita
-    if const == "Pa":                 #const sera a varaiavel recebida pelo GUI 
+    if constante == "Pa":                 #const sera a varaiavel recebida pelo GUI 
         r = 8.314 
-    if const == "atm":
+    if constante == "atm":
         r = 0.082
-    if const == "mmHg":
+    if constante == "mmHg":
         r = 62.3
-    if const == None:
+    if constante == None:
         pass
     if p == 0 and (v and n and t) != 0:
         resultado = (n * r * t) / v
@@ -42,4 +42,4 @@ def claperyon(const="mmHg", p=0, v=0, n=0, r=0, t=0):
 
 
 if __name__ == "__main__":
-    print(claperyon(p=0, v=0, n=0, t=0))
+    print(clapeyron(constante="atm",p=3,v=1,r=10))
