@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lei de Gay-Lussac</title>
+</head>
+<body>
+    <h1>Lei de Gay-Lussac</h1><br>
+    <h3>A lei de Gay-Lussac enuncia que volume e temperatura de um gás sempre serão diretamente proporcionais, desde que a pressão seja constante.</h3>
+    <h3>Fórmula: V1 / T1 = V2 / T2</h3>
+    <h5>Deixe em branco o valor que deseja descobrir.</h5>
+    <input id="textinput1" name="textinput" value="" type="text" placeholder="V1"><br><br>
+    <input id="textinput2" name="textinput" value="" type="text" placeholder="V2"><br><br>
+    <input id="textinput3" name="textinput" value="" type="text" placeholder="T1"><br><br>
+    <input id="textinput4" name="textinput" value="" type="text" placeholder="T2"><br><br>
+    <button onclick="gay_lussac()">Calcular</button>
+    <hr>
+    <div id="resultado">
+
+    </div>
+    <script type="text/javascript">
+    function gay_lussac(){
+        var div = document.getElementById("resultado");
+        let v1 = document.getElementById("textinput1").value;
+        parseInt(v1);
+        let v2 = document.getElementById("textinput2").value;
+        parseInt(v2);
+        let t1 = document.getElementById("textinput3").value;
+        parseInt(t1);
+        let t2 = document.getElementById("textinput4").value;
+        parseInt(t2);
+    
+        var resultado;
+    
+        if (t1 === '' && (t2 && v1 && v2) !== '') {
+        resultado = t2 / v2 * v1;
+        div.innerText = "O resultado do valor a ser descoberto é: "+ resultado;
+        } else {
+        if (t2 === '' && (t1 && v1 && v2) !== '') {
+            resultado = t1 / v1 * v2;
+            div.innerText = "O resultado do valor a ser descoberto é: "+ resultado;
+        } else {
+            if (v1 === '' && (t2 && t1 && v2) !== '') {
+            resultado = t2 / v2 * t1;
+            div.innerText = "O resultado do valor a ser descoberto é: "+ resultado;
+            } else {
+            if (v2 === '' && (t2 && v1 && t1) !== '') {
+                resultado = t1 / v1 * t2;
+                div.innerText = "O resultado do valor a ser descoberto é: "+ resultado;
+            } else {
+                if (t1 && t2 && v1 && v2 !== '') {
+                    div.innerText = "Não há dados a serem descobertos.";
+                } else {
+                if ((t1 && t2 && v1 && v2) === '') {
+                    div.innerText = "Não há dados suficientes.";
+                } else {}
+                }
+            }
+            }
+        }
+        }
+    }
+    </script>
+</body>
+</html>

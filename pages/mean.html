@@ -4,24 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boyle-Mariotte</title>
+    <title>Média</title>
 </head>
 <body>
-    <h1>Lei de Boyle-Mariotte</h1><br>
-    <h3>Lei de Boyle-Mariotte enuncia que a pressão absoluta e o volume de uma certa quantidade de gás confinado são inversamente proporcionais se a temperatura permanece constante em um sistema fechado.</h3>
-    <h3>Fórmula: P1 * P2 = V1 * V2</h3>
+    <h1>Média</h1><br>
+    <h3>A média é calculada adicionando um grupo de números e dividindo pela contagem desses números.</h3>
+    <h3>Fórmula: (X1 + X2 + ... + Xn) / n</h3>
     <h5>Deixe em branco o valor que deseja descobrir.</h5>
     <input id="textinput1" name="textinput" value="" type="text" placeholder="P1"><br><br>
     <input id="textinput2" name="textinput" value="" type="text" placeholder="P2"><br><br>
     <input id="textinput3" name="textinput" value="" type="text" placeholder="V1"><br><br>
     <input id="textinput4" name="textinput" value="" type="text" placeholder="V2"><br><br>
-    <button onclick="boyle()">Calcular</button>
-    <hr>
+    <button onclick="mean()">Confirmar</button>
     <div id="resultado">
 
     </div>
     <script type="text/javascript">
-    function boyle(){
+    function mean(){
         var div = document.getElementById("resultado");
         let p1 = document.getElementById("textinput1").value;
         parseInt(p1);

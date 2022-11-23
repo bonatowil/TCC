@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lei dos gases ideais</title>
+</head>
+<body>
+    <h1>Lei dos gases ideais</h1><br>
+    <h3>A lei dos gases ideais é a chamada equação de estado do gás ideal, também chamado de gás perfeito.</h3>
+    <h3>Fórmula: P * V = n * R * T</h3>
+    <h5>Deixe em branco o valor que deseja descobrir.</h5>
+    <input id="textinput1" name="textinput" value="" type="text" placeholder="P"><br><br>
+    <input id="textinput2" name="textinput" value="" type="text" placeholder="V"><br><br>
+    <input id="textinput3" name="textinput" value="" type="text" placeholder="n"><br><br>
+    <input id="textinput4" name="textinput" value="" type="text" placeholder="T"><br><br>
+    <h4>Escolha a medida da constante (r):</h4>
+    <input type="radio" name="constante" id="constante1" value="8.314"/> Pa<br/>
+    <input type="radio" name="constante" id="constante2" value="0.082"/> atm<br/>
+    <input type="radio" name="constante" id="constante3" value="62.3"/> mmHg<br/><br>
+    
+    <button onclick="clapeyron()">Calcular</button>
+    <hr>
+    <div id="resultado">
+
+    </div>
+    <script type="text/javascript">
+    function clapeyron(){
+        var div = document.getElementById("resultado");
+        let p = document.getElementById("textinput1").value;
+        parseInt(p);
+        let v = document.getElementById("textinput2").value;
+        parseInt(v);
+        let n = document.getElementById("textinput3").value;
+        parseInt(n);
+        let t = document.getElementById("textinput4").value;
+        parseInt(t);
+        if(document.getElementById('constante1').checked){
+            var r = document.getElementById("constante1").value;
+        } else {
+            if (document.getElementById('constante2').checked){
+                var r = document.getElementById("constante2").value;
+            } else {
+                if (document.getElementById('constante3').checked){
+                var r = document.getElementById("constante3").value;
+            }
+        }
+    }
+        var resultado;
+    
+        if (p === '' && (v && n && t) !== '') {
+        resultado = n * r * t / v;
+        div.innerText = "O resultado do valor a ser descoberto é: "+ resultado;
+        } else {
+        if (v === '' && (p && n && t) !== '') {
+            resultado = n * r * t / p;
+            div.innerText = "O resultado do valor a ser descoberto é: "+ resultado;
+        } else {
+            if (n === '' && (p && v && t) !== '') {
+            resultado = p * v / (r * t);
+            div.innerText = "O resultado do valor a ser descoberto é: "+ resultado;
+            } else {
+            if (t === '' && (p && v && n) !== '') {
+                resultado = p * v / (n * r);
+                div.innerText = "O resultado do valor a ser descoberto é: "+ resultado;
+            } else {
+                if (p && v && n && t !== '') {
+                div.innerText = "Não há dados suficientes.";
+                } else {
+                if ((p && v && n && t) === '') {
+                    div.innerText = "Não há dados a serem descobertos.";
+                } else {}
+                }
+            }
+            }
+        }
+        }
+    }
+    </script>
+</body>
+</html>
