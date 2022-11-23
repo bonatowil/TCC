@@ -10,56 +10,39 @@
     <h1>Média</h1><br>
     <h3>A média é calculada adicionando um grupo de números e dividindo pela contagem desses números.</h3>
     <h3>Fórmula: (X1 + X2 + ... + Xn) / n</h3>
-    <h5>Deixe em branco o valor que deseja descobrir.</h5>
-    <input id="textinput1" name="textinput" value="" type="text" placeholder="P1"><br><br>
-    <input id="textinput2" name="textinput" value="" type="text" placeholder="P2"><br><br>
-    <input id="textinput3" name="textinput" value="" type="text" placeholder="V1"><br><br>
-    <input id="textinput4" name="textinput" value="" type="text" placeholder="V2"><br><br>
-    <button onclick="mean()">Confirmar</button>
+    <h5>Insira os valores separados por vírgula, caso hajam casas decimais, use "." Ex.: 1.58,1.74...</h5>
+    <textarea type="number" id="numeros" name="numeros" rows="5" cols="33" placeholder="Insira aqui os valores."></textarea><br><br>
+    <button onclick="mean()">Confirmar</button><hr>
     <div id="resultado">
 
     </div>
     <script type="text/javascript">
     function mean(){
         var div = document.getElementById("resultado");
-        let p1 = document.getElementById("textinput1").value;
-        parseInt(p1);
-        let p2 = document.getElementById("textinput2").value;
-        parseInt(p2);
-        let v1 = document.getElementById("textinput3").value;
-        parseInt(v1);
-        let v2 = document.getElementById("textinput4").value;
-        parseInt(v2);
-    
-        var resultado;
-    
-        if (v1 === '' && (v2 && p1 && p2) !== '') {
-        resultado = v2 * p2 / p1;
-        div.innerText = "O resultado do valor a ser descoberto é: "+ resultado;
-        } else {
-        if (v2 === '' && (v1 && p1 && p2) !== '') {
-            resultado = v1 * p1 / p2;
-            div.innerText = "O resultado do valor a ser descoberto é: "+ resultado;
-        } else {
-            if (p1 === '' && (v2 && v1 && p2) !== '') {
-            resultado = v2 * p2 / v1;
-            div.innerText = "O resultado do valor a ser descoberto é: "+ resultado;
-            } else {
-            if (p2 === '' && (v2 && p1 && v1) !== '') {
-                resultado = v1 * p1 / v2;
-                div.innerText = "O resultado do valor a ser descoberto é: "+ resultado;
-            } else {
-                if (v1 && v2 && p1 && p2 !== '') {
-                    div.innerText = "Não há dados a serem descobertos.";
-                } else {
-                if ((v1 && v2 && p1 && p2) === '') {
-                    div.innerText = "Não há dados suficientes.";
-                } else {}
-                }
-            }
-            }
+        let numeros = document.getElementById("numeros").value;
+        numeros_array = numeros.split(',');
+        int_array = []
+        
+        
+        
+        for (i in numeros_array){
+            num_novo_antigo = numeros_array[i];
+            num_novo = parseInt(num_novo_antigo);
+            int_array.push(num_novo);
         }
+        
+        var sum = 0;
+        for(let i=0;i<int_array.length;i++){
+            sum+=int_array[i];
         }
+        
+    	int_array.filter(elm => elm);
+        media = sum / int_array.length;
+        console.log(int_array)
+        console.log(sum)
+        console.log(media)
+        
+        div.innerText = "A soma dos valores é: "+ sum + "\nE a média é: " + media;
     }
     </script>
 </body>
