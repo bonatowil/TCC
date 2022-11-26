@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Densidade</title>
+</head>
+<body>
+    <h1>Densidade</h1><br>
+    <h3>A densidade de um corpo define-se como o quociente entre a massa e o volume desse corpo. Desta forma pode-se dizer que a densidade mede o grau de concentração de massa em determinado volume.</h3>
+    <h3>Fórmula: d = m / V</h3>
+    <h5>Deixe em branco o valor que deseja descobrir.</h5>
+    <input id="textinput1" name="textinput" value="" type="text" placeholder="d"><br><br>
+    <input id="textinput2" name="textinput" value="" type="text" placeholder="m"><br><br>
+    <input id="textinput3" name="textinput" value="" type="text" placeholder="V"><br><br>
+    <button onclick="density()">Calcular</button>
+    <hr>
+    <div id="resultado">
+
+    </div>
+    <script type="text/javascript">
+    function density(){
+        var div = document.getElementById("resultado");
+        let d = document.getElementById("textinput1").value;
+        parseInt(d);
+        let m = document.getElementById("textinput2").value;
+        parseInt(m);
+        let V = document.getElementById("textinput3").value;
+        parseInt(V);
+    
+        var resultado;
+    
+        if (d === '' && (m && V) !== '') {
+            resultado = m * V;
+            div.innerText = "O resultado do valor a ser descoberto é: "+ resultado;
+            } else {
+                if (m === '' && (V && d) !== '') {
+                    resultado = d * V;
+                    div.innerText = "O resultado do valor a ser descoberto é: "+ resultado;
+                    } else {
+                        if (V === '' && (m && d) !== '') {
+                            resultado = d * m;
+                            div.innerText = "O resultado do valor a ser descoberto é: "+ resultado;
+                        } else {
+                            if (d === '' && (m && d) !== '') {
+                                resultado = m / V;
+                                div.innerText = "O resultado do valor a ser descoberto é: "+ resultado;
+                            } else {
+                                if ((d && m && V) !== '') {
+                                div.innerText = "Não há dados a serem descobertos.";
+                                } else {
+                                    if ((d && m && V) === '') {
+                                div.innerText = "Não há dados suficientes.";
+                                    } else {}
+                    
+                                }
+                            }
+                        }
+                    }
+                }
+    }
+    </script>
+</body>
+</html>
