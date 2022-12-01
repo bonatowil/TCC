@@ -9,16 +9,22 @@
 </head>
 <body>
     <h1>Densidade</h1><br>
-    <h3>A densidade de um corpo define-se como o quociente entre a massa e o volume desse corpo. Desta forma pode-se dizer que a densidade mede o grau de concentração de massa em determinado volume.</h3>
-    <h3>Fórmula: d = m / V</h3>
-    <h5>Deixe em branco o valor que deseja descobrir.</h5>
-    <input id="textinput1" name="textinput" value="" type="text" placeholder="d"><br><br>
-    <input id="textinput2" name="textinput" value="" type="text" placeholder="m"><br><br>
-    <input id="textinput3" name="textinput" value="" type="text" placeholder="V"><br><br>
-    <button onclick="density()">Calcular</button>
-    <hr>
+    <h2>A densidade de um corpo define-se como o quociente entre a massa e o volume desse corpo. Desta forma pode-se dizer que a densidade mede o grau de concentração de massa em determinado volume.</h2>
+    <div class="formula">
+        <p>d = m / V</p>
+        <p style="font-weight: 400; opacity: .3;">Fórmula</p>
+    </div>   
+    <div class="entry">
+        <p style="text-align: center; margin-bottom: 10px; opacity: .7;">Deixe em branco o valor que deseja descobrir</p>
+        <div class="text-input">
+            <input id="textinput1" name="textinput" value="" type="text" placeholder="d">
+            <input id="textinput2" name="textinput" value="" type="text" placeholder="m">
+            <input id="textinput3" name="textinput" value="" type="text" placeholder="V">
+        </div>
+        <button onclick="density()"><span>Calcular</span></button>
+    </div>
     <div id="resultado">
-
+        <p>Resultados</p>
     </div>
     <script type="text/javascript">
     function density(){
@@ -33,7 +39,7 @@
         var resultado;
     
         if (d === '' && (m && V) !== '') {
-            resultado = m * V;
+            resultado = m / V;
             div.innerText = "O resultado do valor a ser descoberto é: "+ resultado;
             } else {
                 if (m === '' && (V && d) !== '') {
@@ -41,7 +47,7 @@
                     div.innerText = "O resultado do valor a ser descoberto é: "+ resultado;
                     } else {
                         if (V === '' && (m && d) !== '') {
-                            resultado = d * m;
+                            resultado = m / d;
                             div.innerText = "O resultado do valor a ser descoberto é: "+ resultado;
                         } else {
                             if (d === '' && (m && d) !== '') {

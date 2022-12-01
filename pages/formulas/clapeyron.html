@@ -8,23 +8,40 @@
     <title>Lei dos gases ideais</title>
 </head>
 <body>
-    <h1>Lei dos gases ideais</h1><br>
-    <h3>A lei dos gases ideais é a chamada equação de estado do gás ideal, também chamado de gás perfeito.</h3>
-    <h3>Fórmula: P * V = n * R * T</h3>
-    <h5>Deixe em branco o valor que deseja descobrir.</h5>
-    <input id="textinput1" name="textinput" value="" type="text" placeholder="P"><br><br>
-    <input id="textinput2" name="textinput" value="" type="text" placeholder="V"><br><br>
-    <input id="textinput3" name="textinput" value="" type="text" placeholder="n"><br><br>
-    <input id="textinput4" name="textinput" value="" type="text" placeholder="T"><br><br>
-    <h4>Escolha a medida da constante (r):</h4>
-    <input type="radio" name="constante" id="constante1" value="8.314"/> Pa<br/>
-    <input type="radio" name="constante" id="constante2" value="0.082"/> atm<br/>
-    <input type="radio" name="constante" id="constante3" value="62.3"/> mmHg<br/><br>
+    <h1>Lei dos gases ideais</h1>
+    <h2>A lei dos gases ideais é a chamada equação de estado do gás ideal, também chamado de gás perfeito.</h2>
+    <div class="formula">
+        <p>P * V = n * R * T</p>
+        <p style="font-weight: 400; opacity: .3;">Fórmula</p>
+    </div>   
+    <div class="entry">
+        <p style="text-align: center; margin-bottom: 10px; opacity: .7;">Deixe em branco o valor que deseja descobrir</p>
+        <div class="text-input">
+            <input id="textinput1" name="textinput" value="" type="text" placeholder="P">
+            <input id="textinput2" name="textinput" value="" type="text" placeholder="V">
+            <input id="textinput3" name="textinput" value="" type="text" placeholder="n">
+            <input id="textinput4" name="textinput" value="" type="text" placeholder="T">
+        </div>
+        <p style="text-align: center; margin: 5vh 0 2vh 0; opacity: .7;">Escolha a medida da constante (r):</p>
+        <div class="radio-input">
+            <div class="pa">
+                <input type="radio" name="constante" id="constante1" value="8.314"/>
+                <label for="constante1">Pa</label>
+            </div>
+            <div class="atm">
+                <input type="radio" name="constante" id="constante2" value="0.082"/>
+                <label for="constante2">atm</label>
+            </div>
+            <div class="mmHg">
+                <input type="radio" name="constante" id="constante3" value="62.3"/>
+                <label for="constante3">mmHg</label>
+            </div>
+        </div>
+        <button style="margin-top: 5vh;" onclick="clapeyron()"><span>Calcular</span></button>
+    </div>
     
-    <button onclick="clapeyron()">Calcular</button>
-    <hr>
     <div id="resultado">
-
+        <p>Resultados</p>
     </div>
     <script type="text/javascript">
     function clapeyron(){

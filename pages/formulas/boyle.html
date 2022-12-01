@@ -9,17 +9,23 @@
 </head>
 <body>
     <h1>Lei de Boyle-Mariotte</h1><br>
-    <h3>Lei de Boyle-Mariotte enuncia que a pressão absoluta e o volume de uma certa quantidade de gás confinado são inversamente proporcionais se a temperatura permanece constante em um sistema fechado.</h3>
-    <h3>Fórmula: P1 * P2 = V1 * V2</h3>
-    <h5>Deixe em branco o valor que deseja descobrir.</h5>
-    <input id="textinput1" name="textinput" value="" type="text" placeholder="P1"><br><br>
-    <input id="textinput2" name="textinput" value="" type="text" placeholder="P2"><br><br>
-    <input id="textinput3" name="textinput" value="" type="text" placeholder="V1"><br><br>
-    <input id="textinput4" name="textinput" value="" type="text" placeholder="V2"><br><br>
-    <button onclick="boyle()">Calcular</button>
-    <hr>
+    <h2>Lei de Boyle-Mariotte enuncia que a pressão absoluta e o volume de uma certa quantidade de gás confinado são inversamente proporcionais se a temperatura permanece constante em um sistema fechado.</h2>
+    <div class="formula">
+        <p>P1 * P2 = V1 * V2</p>
+        <p style="font-weight: 400; opacity: .3;">Fórmula</p>
+    </div>   
+    <div class="entry">
+        <p style="text-align: center; margin-bottom: 10px; opacity: .7;">Deixe em branco o valor que deseja descobrir</p>
+        <div class="text-input">
+            <input id="textinput1" name="textinput" value="" type="text" placeholder="P1">
+            <input id="textinput2" name="textinput" value="" type="text" placeholder="P2">
+            <input id="textinput3" name="textinput" value="" type="text" placeholder="V1">
+            <input id="textinput4" name="textinput" value="" type="text" placeholder="V2">
+        </div>
+        <button onclick="boyle()"><span>Calcular</span></button>
+    </div>
     <div id="resultado">
-
+        <p>Resultados</p>
     </div>
     <script type="text/javascript">
     function boyle(){

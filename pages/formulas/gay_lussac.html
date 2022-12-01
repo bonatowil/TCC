@@ -9,17 +9,23 @@
 </head>
 <body>
     <h1>Lei de Gay-Lussac</h1><br>
-    <h3>A lei de Gay-Lussac enuncia que volume e temperatura de um gás sempre serão diretamente proporcionais, desde que a pressão seja constante.</h3>
-    <h3>Fórmula: V1 / T1 = V2 / T2</h3>
-    <h5>Deixe em branco o valor que deseja descobrir.</h5>
-    <input id="textinput1" name="textinput" value="" type="text" placeholder="V1"><br><br>
-    <input id="textinput2" name="textinput" value="" type="text" placeholder="V2"><br><br>
-    <input id="textinput3" name="textinput" value="" type="text" placeholder="T1"><br><br>
-    <input id="textinput4" name="textinput" value="" type="text" placeholder="T2"><br><br>
-    <button onclick="gay_lussac()">Calcular</button>
-    <hr>
+    <h2>A lei de Gay-Lussac enuncia que volume e temperatura de um gás sempre serão diretamente proporcionais, desde que a pressão seja constante.</h2>
+    <div class="formula">
+        <p>V1 / T1 = V2 / T2</p>
+        <p style="font-weight: 400; opacity: .3;">Fórmula</p>
+    </div>   
+    <div class="entry">
+        <p style="text-align: center; margin-bottom: 10px; opacity: .7;">Deixe em branco o valor que deseja descobrir</p>
+        <div class="text-input">
+            <input id="textinput1" name="textinput" value="" type="text" placeholder="V1">
+            <input id="textinput2" name="textinput" value="" type="text" placeholder="V2">
+            <input id="textinput3" name="textinput" value="" type="text" placeholder="T1">
+            <input id="textinput4" name="textinput" value="" type="text" placeholder="T2">
+        </div>
+        <button onclick="gay_lussac()"><span>Calcular</span></button>
+    </div>
     <div id="resultado">
-
+        <p>Resultados</p>
     </div>
     <script type="text/javascript">
     function gay_lussac(){

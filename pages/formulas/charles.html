@@ -9,15 +9,21 @@
 </head>
 <body>
     <h1>Lei de Charles</h1><br>
-    <h3>A lei de Charles refere-se à forma como o volume de uma massa fixa de gás varia proporcionalmente com a temperatura, mantendo-se a pressão constante.</h3>
-    <h3>Fórmula: P1 / T1 = P2 / T2</h3>
-    <h5>Deixe em branco o valor que deseja descobrir.</h5>
-    <input id="textinput1" name="textinput" value="" type="text" placeholder="P1"><br><br>
-    <input id="textinput2" name="textinput" value="" type="text" placeholder="P2"><br><br>
-    <input id="textinput3" name="textinput" value="" type="text" placeholder="T1"><br><br>
-    <input id="textinput4" name="textinput" value="" type="text" placeholder="T2"><br><br>
-    <button onclick="gay_lussac()">Calcular</button>
-    <hr>
+    <h2>A lei de Charles refere-se à forma como o volume de uma massa fixa de gás varia proporcionalmente com a temperatura, mantendo-se a pressão constante.</h2>
+    <div class="formula">
+        <p>P1 / T1 = P2 / T2</p>
+        <p style="font-weight: 400; opacity: .3;">Fórmula</p>
+    </div>   
+    <div class="entry">
+        <p style="text-align: center; margin-bottom: 10px; opacity: .7;">Deixe em branco o valor que deseja descobrir</p>
+        <div class="text-input">
+            <input id="textinput1" name="textinput" value="" type="text" placeholder="P1">
+            <input id="textinput2" name="textinput" value="" type="text" placeholder="P2">
+            <input id="textinput3" name="textinput" value="" type="text" placeholder="T1">
+            <input id="textinput4" name="textinput" value="" type="text" placeholder="T2">
+        </div>
+        <button onclick="gay_lussac()"><span>Calcular</span></button>
+    </div>
     <div id="resultado">
 
     </div>

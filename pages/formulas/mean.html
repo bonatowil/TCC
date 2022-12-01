@@ -11,18 +11,18 @@
     <h1>Média</h1>
     <h2>A média é calculada adicionando um grupo de números e dividindo pela contagem desses números.</h2>
     <div class="formula">
-        <p>(X1 + X2 + ... + Xn)</p>
+        <p class="div">(X1 + X2 + ... + Xn)</p>
         <p>n</p>
-        <p style="font-weight: bolder; opacity: .5;">Fórmula</p>
+        <p style="font-weight: 400; opacity: .3;">Fórmula</p>
     </div>    
     <div class="entry">
         <p>Insira os valores separados por vírgula, caso hajam casas decimais, use "."</p>
-        <p style="font-weight: bolder; opacity: .5;margin: .5em 0 1em 0;">Ex.: 1.58,1.74...</p>
+        <p style="font-weight: bolder; opacity: .8;margin: .5em 0 1em 0;">Ex.: 1.58,1.74...</p>
         <textarea type="number" id="numeros" name="numeros" rows="5" cols="33" placeholder="Insira aqui os valores."></textarea>
-        <button onclick="mean()">Confirmar</button>
+        <button onclick="mean()"><span>Confirmar</span></button>
     </div>
     <div id="resultado">
-        <p>Resultados</p>
+        <p style="padding: .6em;">Resultados</p>
     </div>
     <script type="text/javascript">
     function mean(){
