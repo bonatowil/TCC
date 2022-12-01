@@ -104,7 +104,7 @@ a.link:hover::after {
     transform: scale(1, 1);
 }
 
-nav a:hover {
+nav a.link:hover {
     animation: scale 100ms ease-in-out forwards;
 }
 
@@ -120,6 +120,10 @@ nav div.logo {
     -webkit-text-fill-color: transparent;
     filter: brightness(2);
 
+}
+
+nav div.logo:hover {
+    animation: logo 300ms forwards;
 }
 
 nav div.table {
@@ -181,5 +185,15 @@ nav div.table {
 @keyframes scale {
     to {
         transform: scale(1.1);
+    }
+}
+
+@keyframes logo {
+    from {
+        opacity: .8;
+    }
+    to {
+        opacity: 1;
+        filter: brightness(2.5);
     }
 }

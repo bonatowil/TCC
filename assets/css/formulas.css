@@ -15,6 +15,8 @@
 
 * {
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+
 }
 body {
     overflow: auto;
@@ -23,7 +25,6 @@ body {
     color: gainsboro;
     font-size: calc(.5vmax + .8rem);
     font-weight: 400;
-    font-family: 'Montserrat', sans-serif;
     padding: 1rem;
 }
 
@@ -53,11 +54,11 @@ h2 {
     margin: 0;
 }
 
-.formula p:nth-child(1) {
+.formula p.div {
     position: relative;
 }
 
-.formula p:nth-child(1)::after {
+.formula p.div::after {
     content: "";
     bottom: -5px;
     left: 0;
@@ -81,7 +82,7 @@ h2 {
     width: 100%;
 }
 
-textarea, button {
+textarea, button, input {
     background-color: var(--background-color);
     color: white;
     border: 1px solid gray;
@@ -93,23 +94,67 @@ textarea {
 }
 
 button {
+    width: fit-content;
+    margin: auto;
     margin-top: .8em;
     font-size: .8em;
     padding: .8em;
+    padding-inline: 10vw;
+}
+
+button span {
+    width: fit-content;
+    margin: auto;
+    display: block;
+}
+
+button:hover span {
+    animation: scale 100ms ease-in-out forwards;
+    cursor: pointer;
+}
+
+input {
+    margin-block: .5vh;
+    padding: 2vh;
+}
+
+input:hover {
+    cursor: pointer;
 }
 
 #resultado {
     min-height: 2.5em;
-    padding: .5em;
+    padding: 1em;
     border: 1px solid gray;
     border-radius: 5px;
-    margin-top: 5px;
+    margin-top: 5vh;
 }
 
 #resultado p {
     margin: 0;
     width: 100%;
     text-align: center;
-    padding: .6em;
     opacity: .5;
+}
+
+.text-input {
+    display: flex;
+    gap: 10px;
+}
+
+.text-input input {
+    flex-grow: 1;
+}
+
+.radio-input {
+    display: flex;
+    justify-content: center;
+    gap: 3vw;
+}
+
+
+@keyframes scale {
+    to {
+        transform: scale(1.1);
+    }
 }
