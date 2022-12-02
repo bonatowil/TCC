@@ -7,8 +7,9 @@
     <link rel="shortcut icon" href="../assets/images/lab_icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/table.css">
+    <script src="../../assets/script/script.js"></script>
     <script>
-        function randomFloat(min, max) { // min and max included 
+        function randomFloat(min, max) { 
             return Math.floor(Math.random() * (max - min + 1) + min)
         }
         function ElementHighlight() {
@@ -86,11 +87,18 @@
     <title>Tabela</title>
 </head>
 <body onload="ElementHighlight()">
-    <nav>
+    <nav class="nav">
         <div class="logo"><a href="../index.html">Softec</a></div>
-        <div class="basic"><a class="link" href="basic.html">Calculadora</a></div>
-        <div class="conversion"><a class="link" href="advanced.html">Avançado</a></div>
-        <div class="table"><a class="link" href="table.html">Tabela Periódica</a></div>
+        <a href="#" class="button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <div class="links">
+            <div class="basic"><a class="link" href="basic.html">Calculadora</a></div>
+            <div class="conversion"><a class="link" href="advanced.html">Avançado</a></div>
+            <div class="table"><a class="link" href="table.html">Tabela Periódica</a></div>
+        </div>
     </nav>
     <h2><span>Tabela Periódica</span></h2>
     <main>

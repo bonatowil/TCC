@@ -5,34 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/css/formulas.css">
-    
+    <script src="../../assets/script/script.js"></script>
     <title>Boyle-Mariotte</title>
 </head>
 <body>
-    <nav>
+    <nav class="nav">
         <div class="logo"><a href="../../index.html">Softec</a></div>
-        <div class="basic"><a class="link" href="../basic.html">Calculadora</a></div>
-        <div class="conversion"><a class="link" href="../advanced.html">Avançado</a></div>
-        <div class="table"><a class="link" href="../table.html">Tabela Periódica</a></div>
-    </nav>
-    <h1>Lei de Boyle-Mariotte</h1><br>
-    <h2>Lei de Boyle-Mariotte enuncia que a pressão absoluta e o volume de uma certa quantidade de gás confinado são inversamente proporcionais se a temperatura permanece constante em um sistema fechado.</h2>
-    <div class="formula">
-        <p>P1 * P2 = V1 * V2</p>
-        <p style="font-weight: 400; opacity: .3;">Fórmula</p>
-    </div>   
-    <div class="entry">
-        <p style="text-align: center; margin-bottom: 10px; opacity: .7;">Deixe em branco o valor que deseja descobrir</p>
-        <div class="text-input">
-            <input id="textinput1" name="textinput" value="" type="text" placeholder="P1">
-            <input id="textinput2" name="textinput" value="" type="text" placeholder="P2">
-            <input id="textinput3" name="textinput" value="" type="text" placeholder="V1">
-            <input id="textinput4" name="textinput" value="" type="text" placeholder="V2">
+        <a href="#" class="button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <div class="links">
+            <div class="basic"><a class="link" href="../basic.html">Calculadora</a></div>
+            <div class="conversion"><a class="link" href="../advanced.html">Avançado</a></div>
+            <div class="table"><a class="link" href="../table.html">Tabela Periódica</a></div>
         </div>
-        <button onclick="boyle()"><span>Calcular</span></button>
-    </div>
-    <div id="resultado">
-        <p>Resultados</p>
+    </nav>
+    <div class="script">
+        <h1><span>Lei de Boyle-Mariotte</span></h1>
+        <h2>Lei de Boyle-Mariotte enuncia que a pressão absoluta e o volume de uma certa quantidade de gás confinado são inversamente proporcionais se a temperatura permanece constante em um sistema fechado.</h2>
+        <div class="formula">
+            <p>P1 * P2 = V1 * V2</p>
+            <p style="font-weight: 400; opacity: .3;">Fórmula</p>
+        </div>
+        <div class="entry">
+            <p style="text-align: center; margin-bottom: 10px; opacity: .7;">Deixe em branco o valor que deseja descobrir</p>
+            <div class="text-input">
+                <input id="textinput1" name="textinput" value="" type="text" placeholder="P1">
+                <input id="textinput2" name="textinput" value="" type="text" placeholder="P2">
+                <input id="textinput3" name="textinput" value="" type="text" placeholder="V1">
+                <input id="textinput4" name="textinput" value="" type="text" placeholder="V2">
+            </div>
+            <button onclick="boyle()"><span>Calcular</span></button>
+        </div>
+        <div id="resultado">
+            <p>Resultados</p>
+        </div>
     </div>
     <script type="text/javascript">
     function boyle(){

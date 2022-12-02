@@ -5,32 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/css/formulas.css">
+    <script src="../../assets/script/script.js"></script>
     <title>Densidade</title>
 </head>
 <body>
-    <nav>
+    <nav class="nav">
         <div class="logo"><a href="../../index.html">Softec</a></div>
-        <div class="basic"><a class="link" href="../basic.html">Calculadora</a></div>
-        <div class="conversion"><a class="link" href="../advanced.html">Avançado</a></div>
-        <div class="table"><a class="link" href="../table.html">Tabela Periódica</a></div>
-    </nav>
-    <h1>Densidade</h1><br>
-    <h2>A densidade de um corpo define-se como o quociente entre a massa e o volume desse corpo. Desta forma pode-se dizer que a densidade mede o grau de concentração de massa em determinado volume.</h2>
-    <div class="formula">
-        <p>d = m / V</p>
-        <p style="font-weight: 400; opacity: .3;">Fórmula</p>
-    </div>   
-    <div class="entry">
-        <p style="text-align: center; margin-bottom: 10px; opacity: .7;">Deixe em branco o valor que deseja descobrir</p>
-        <div class="text-input">
-            <input id="textinput1" name="textinput" value="" type="text" placeholder="d">
-            <input id="textinput2" name="textinput" value="" type="text" placeholder="m">
-            <input id="textinput3" name="textinput" value="" type="text" placeholder="V">
+        <a href="#" class="button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <div class="links">
+            <div class="basic"><a class="link" href="../basic.html">Calculadora</a></div>
+            <div class="conversion"><a class="link" href="../advanced.html">Avançado</a></div>
+            <div class="table"><a class="link" href="../table.html">Tabela Periódica</a></div>
         </div>
-        <button onclick="density()"><span>Calcular</span></button>
-    </div>
-    <div id="resultado">
-        <p>Resultados</p>
+    </nav>
+    <div class="script">
+        <h1><span>Densidade</span></h1>
+        <h2>A densidade de um corpo define-se como o quociente entre a massa e o volume desse corpo. Desta forma pode-se dizer que a densidade mede o grau de concentração de massa em determinado volume.</h2>
+        <div class="formula">
+            <p>d = m / V</p>
+            <p style="font-weight: 400; opacity: .3;">Fórmula</p>
+        </div>
+        <div class="entry">
+            <p style="text-align: center; margin-bottom: 10px; opacity: .7;">Deixe em branco o valor que deseja descobrir</p>
+            <div class="text-input">
+                <input id="textinput1" name="textinput" value="" type="text" placeholder="d">
+                <input id="textinput2" name="textinput" value="" type="text" placeholder="m">
+                <input id="textinput3" name="textinput" value="" type="text" placeholder="V">
+            </div>
+            <button onclick="density()"><span>Calcular</span></button>
+        </div>
+        <div id="resultado">
+            <p>Resultados</p>
+        </div>
     </div>
     <script type="text/javascript">
     function density(){
