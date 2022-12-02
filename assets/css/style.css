@@ -154,7 +154,8 @@ nav div.table {
     border: 1px solid #54b3d6;
     border-radius: 10px;
     flex-basis: calc(25% - 25px);
-    backdrop-filter: brightness(1.2 );
+    flex-wrap: wrap;
+    backdrop-filter: brightness(1.2);
     box-shadow: 1px 1px 5px rgba(173, 216, 230, 0.5); 
 }
 
@@ -197,3 +198,5 @@ nav div.table {
         filter: brightness(2.5);
     }
 }
+
+@media 

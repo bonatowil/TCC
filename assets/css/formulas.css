@@ -15,7 +15,7 @@
 
 * {
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 
 }
 body {
@@ -25,12 +25,101 @@ body {
     color: gainsboro;
     font-size: calc(.5vmax + .8rem);
     font-weight: 400;
-    padding: 1rem;
+}
+
+nav {
+    display: flex;
+    gap: 1vmax;
+    color: var(--gainsboro);
+    text-align: center;
+    padding: 1vmax;
+    margin-bottom: 2vmax;
+    position: relative;
+}
+
+nav::after {
+    content: "";
+    width: 75%;
+    position: absolute;
+    background-image: linear-gradient(to right, 
+        var(--background-color),
+        var(--ming), 
+        var(--indigo-dye), 
+        var(--background-color));
+    height: 1px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    /* filter: brightness(2); */
+}
+
+nav div {
+    display: grid;
+    place-items: center;
+    flex-basis: calc(100% / 4);
+    font-weight: 700;
+    
+}
+
+nav div a {
+    padding: 0 .5vmax;
+    text-decoration: none;
+    color: var(--gainsboro);
+}
+
+a.link {
+    position: relative;
+}
+
+a.link::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: gainsboro;
+    left: 0;
+    bottom: 0;
+    transform: scale(0, 1);
+    transition: all 250ms ease;
+}
+
+a.link:hover::after {
+    transform: scale(1, 1);
+}
+
+nav a.link:hover {
+    animation: scale 100ms ease-in-out forwards;
+}
+
+nav div.logo {
+    font-size: 2rem;
+    padding-left: 2vmax;
+    display: grid;
+    justify-items: start;
+    align-items: center;
+    background-image: linear-gradient(to right, var(--ming), var(--indigo-dye), var(--indigo-dye), var(--indigo-dye));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: brightness(2);
+
+}
+
+nav div.logo:hover {
+    animation: logo 300ms forwards;
+}
+
+nav div.table {
+    padding-right: 2vmax;
+    display: grid;
+    justify-items: end;
+    align-items: center;
 }
 
 h1 {
     width: 100%;
     text-align: center;
+    background-image: linear-gradient();
 }
 
 h2 {
@@ -140,6 +229,7 @@ input:hover {
 .text-input {
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 .text-input input {
