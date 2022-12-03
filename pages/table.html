@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="../assets/images/lab_icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/table.css">
-    <script src="../../assets/script/script.js"></script>
+    <script defer src="../../assets/script/script.js"></script>
     <script>
         function randomFloat(min, max) { 
             return Math.floor(Math.random() * (max - min + 1) + min)
@@ -87,6 +87,7 @@
     <title>Tabela</title>
 </head>
 <body onload="ElementHighlight()">
+    <div class="overlay"></div>
     <nav class="nav">
         <div class="logo"><a href="../index.html">Softec</a></div>
         <a href="#" class="button">
