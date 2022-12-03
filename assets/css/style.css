@@ -75,7 +75,16 @@ nav div a {
     color: var(--gainsboro);
 }
 
+body.active {
+    overflow: hidden;
+}
+
+.overlay {
+    display: none;
+}
+
 .overlay.active {
+    display: block;
     animation: color 200ms ease-in-out forwards;
     z-index: 1;
     position: fixed;
@@ -95,7 +104,7 @@ nav.active .links{
     display: flex;
     flex-direction: column;
     position: absolute;
-    transform: translate(15%, 100%);
+    transform: translate(15%, 125%);
     animation: opacity 150ms ease-in-out forwards;
 }
 
