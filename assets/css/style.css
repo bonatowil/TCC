@@ -75,7 +75,25 @@ nav div a {
     color: var(--gainsboro);
 }
 
+.overlay.active {
+    z-index: 1;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, .8);
+}
+
+nav.active .links{
+    font-size: 1.5em;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    transform: translate(15%, 100%);
+}
+
 .button {
+    z-index: 2;
     padding: 0;
     position: absolute;
     top: 50%;

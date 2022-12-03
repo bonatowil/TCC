@@ -3,7 +3,6 @@
 }
 
 body {
-    overflow-x: hidden;
     counter-reset: atomic_num;
     --color: #00000000;
 }
@@ -24,7 +23,7 @@ table {
 }
 
 div.table:not(:has(a)) {
-    overflow-x: auto;
+    overflow-x: scroll;
 }
 
 
@@ -267,10 +266,6 @@ td.othermetal, #othermetal {
     main {
         display: flex;
         flex-direction: column;
-    }
-
-    table {
-        user-select: unset;
     }
 
     .element {

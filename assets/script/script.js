@@ -1,7 +1,8 @@
+const overlay = document.getElementsByClassName('overlay')[0]
 const toggleButton = document.getElementsByClassName('button')[0]
 const navbar = document.getElementsByClassName('nav')[0]
-
 toggleButton.addEventListener('click', () => {
+    overlay.classList.toggle('active')
     navbar.classList.toggle('active')
 })
 
