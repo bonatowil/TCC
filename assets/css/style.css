@@ -93,8 +93,12 @@ body.active {
 }
 
 @keyframes color {
+    from {
+        background-color: rgba(0, 0, 0, .1);
+    }
     to {
-        background-color: rgba(0, 0, 0, .9);
+        background-color: rgba(0, 0, 0, .5);
+        backdrop-filter: blur(15px) brightness(.4);
     }
 }
 
