@@ -269,9 +269,12 @@ td.othermetal, #othermetal {
         flex-direction: column;
     }
 
+    table {
+        user-select: unset;
+    }
+
     .element {
         transform: scale(.75);
         margin: auto;
     }
-
 }
