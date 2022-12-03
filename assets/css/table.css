@@ -271,6 +271,7 @@ td.othermetal, #othermetal {
 
     .element {
         transform: scale(.9);
+        margin: auto;
     }
 
 }
