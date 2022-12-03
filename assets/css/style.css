@@ -97,8 +97,8 @@ body.active {
         background-color: rgba(0, 0, 0, .1);
     }
     to {
-        background-color: rgba(0, 0, 0, .5);
         backdrop-filter: blur(15px) brightness(.4);
+        background-color: rgba(0, 0, 0, .5);
     }
 }
 
