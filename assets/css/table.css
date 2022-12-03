@@ -3,13 +3,14 @@
 }
 
 body {
-    overflow-y: scroll;
+    overflow-x: hidden;
     counter-reset: atomic_num;
     --color: #00000000;
 }
 
 main {
     display: flex;
+    flex-basis: calc(100% / 2);
 }
 
 
@@ -19,8 +20,11 @@ table {
     border: transparent;
     border-collapse: separate;
     margin: 1em;
-    font-size: 1em;
+    font-size: 1.25em;
+}
 
+div.table:not(:has(a)) {
+    overflow-x: auto;
 }
 
 
@@ -184,6 +188,7 @@ td.othermetal, #othermetal {
     /* caret-color: transparent; */
     position: relative;
     /* user-select: none; */
+    margin-left: 2vmin;
 }
 
 .element .atomic_num {
@@ -256,4 +261,16 @@ td.othermetal, #othermetal {
     to {
         filter: brightness(1) opacity(1);
     }
+}
+
+@media (max-width: 720px) {
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .element {
+        transform: scale(.9);
+    }
+
 }
