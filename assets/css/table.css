@@ -23,7 +23,7 @@ table {
 }
 
 div.table:not(:has(a)) {
-    overflow-x: scroll;
+    overflow-x: auto;
 }
 
 
