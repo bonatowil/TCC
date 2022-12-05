@@ -25,6 +25,10 @@ body {
     font-family: 'Quicksand', sans-serif;
 }
 
+body.active {
+    overflow: hidden;
+}
+
 h2 {
     font-weight: 400;
     width: 10em;
@@ -73,10 +77,6 @@ nav div a {
     padding: 0 .5vmax;
     text-decoration: none;
     color: var(--gainsboro);
-}
-
-body.active {
-    overflow: hidden;
 }
 
 .overlay {
@@ -133,6 +133,34 @@ nav.active .links{
     justify-content: space-between;
     height: 20px;
     width: 30px;
+}
+
+.button.active {
+    opacity: .7;
+}
+
+.button.active :nth-child(1) {
+    animation: xdown 150ms forwards;
+}
+
+.button.active :nth-child(2) {
+    animation: xup 150ms forwards;
+}
+
+.button.active :nth-child(3) {
+    background-color: transparent;
+
+}
+
+@keyframes xdown {
+    to {
+        transform: translateY(10px) rotate(45deg);
+    }
+}
+@keyframes xup {
+    to {
+        transform: translateY(1.5px) rotate(-45deg);
+    }
 }
 
 .button .bar {

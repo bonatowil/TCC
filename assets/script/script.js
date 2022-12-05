@@ -3,6 +3,7 @@ const body = document.querySelector("body")
 const toggleButton = document.getElementsByClassName('button')[0]
 const navbar = document.getElementsByClassName('nav')[0]
 toggleButton.addEventListener('click', () => {
+    toggleButton.classList.toggle('active')
     body.classList.toggle('active')
     overlay.classList.toggle('active')
     navbar.classList.toggle('active')
