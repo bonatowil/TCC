@@ -16,6 +16,7 @@
 }
 
 body {
+    color: white;
     caret-color: transparent;
     overflow: auto;
     margin: 0;
@@ -223,6 +224,69 @@ nav div.links {
     font-weight: 700;
     gap: 15vw;
     flex-grow: 1;
+}
+
+.hero .lab-shortcut {
+    width: 90%;
+    text-align: justify;
+    font-size: 1.2em;
+    margin: auto;
+}
+
+.hero .us {
+    display: flex;
+    width: 100%;
+    margin: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.us .card {
+    margin-top: 3vh;
+    border-radius: 10px;
+    background-color: #353535;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+    position: relative;
+    width: max(15vw, 150px);
+}
+
+.card a {
+    width: fit-content;
+    bottom: 10px;
+    position: absolute;
+}
+
+.card img {
+    aspect-ratio: 1/1;
+    width: 24px;
+}
+
+.card .name {
+    background-image: linear-gradient(to right, var(--ming), var(--indigo-dye), var(--indigo-dye), var(--indigo-dye));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+}
+
+.card .first.name {
+    font-size: 1.8em;
+    font-weight: 700;
+    filter: brightness(2);
+}
+
+
+.card .second.name {
+    font-size: 2em;
+    filter: brightness(1.8);
+    opacity: .25;
 }
 
 .content_list:not(:last-of-type) {

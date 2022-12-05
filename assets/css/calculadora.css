@@ -6,7 +6,7 @@
     display: grid;
     justify-content: center;
     align-content: center;
-    min-height: 100vh;
+    margin-top: 5vh;
     grid-template-columns: repeat(4, 5em);
     grid-template-rows: minmax(6em, auto) repeat(5, 5em);
 }
