@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/css/formulas.css">
     <script defer src="../../assets/script/script.js"></script>
-    <title>Erro absoluto e relativo</title>
+    <title>Conversão de massa</title>
 </head>
 <body>
     <div class="overlay"></div>
@@ -23,55 +23,53 @@
             <div class="table"><a class="link" href="../table.html">Tabela Periódica</a></div>
         </div>
     </nav>
-        <div class="script">
-        <h1><span>Erro absoluto e relativo</span></h1>
-        <h2>Cálculo do erro absoluto e erro relativo</h2>
+    <div class="script">
+        <h1><span>Pressão</span></h1>
+        <h2>Conversão de atm para mmHg & mmHg para atm</h2>
         <div class="formula">
-            <p>Erro absoluto = Valor real - Valor aproximado(medido)</p>
+            <p>1 atm = 760 mmHg</p>
             <p style="font-weight: 400; opacity: .3;">Fórmula</p>
         </div>
         <div class="entry">
             <p style="text-align: center; margin-bottom: 10px; opacity: .7;">Deixe em branco o valor que deseja descobrir</p>
             <div class="text-input">
-                <input id="textinput1" name="textinput" value="" type="text" placeholder="Valor real">
-                <input id="textinput2" name="textinput" value="" type="text" placeholder="Valor aproximado">
+                <input id="textinput1" name="textinput" value="" type="text" placeholder="atm">
+                <input id="textinput2" name="textinput" value="" type="text" placeholder="mmHg">
             </div>
-            <button onclick="erros()"><span>Calcular</span></button>
+            <button onclick="pressao()"><span>Calcular</span></button>
         </div>
         <div id="resultado">
             <p>Resultados</p>
         </div>
     </div>
     <script type="text/javascript">
-    function erros(){
+    function pressao(){
         var div = document.getElementById("resultado");
-        let valor_real = document.getElementById("textinput1").value;
-        parseFloat(valor_real);
-        let valor_aproximado = document.getElementById("textinput2").value;
-        parseFloat(valor_aproximado);
+        let atm = document.getElementById("textinput1").value;
+        parseFloat(atm);
+        let mmHg = document.getElementById("textinput2").value;
+        parseFloat(mmHg);
     
         var resultado;
-		
-        if (valor_real !== '' && valor_aproximado !== '') {
-			resultado1 = valor_real - valor_aproximado;
-			resultado2 = (valor_real / valor_aproximado) * 100;
-			
-			if (resultado1 < 0){ 
-				resultado1 = resultado1 * -1;
-				console.log(resultado1);
+		console.log("teste")
+        if (atm === '' && mmHg !== '') {
+            resultado = mmHg * 0.0013157896611399;
+            div.innerText = "O resultado do valor a ser descoberto é: "+ resultado;
+            } else {
+                if (mmHg === '' && atm !== '') {
+                    resultado = atm * 760;
+                    div.innerText = "O resultado do valor a ser descoberto é: "+ resultado;
+                    } else {
+					if ((mmHg && atm) !== '') {
+                        div.innerText = "Não há dados a serem descobertos.";
+                        } else {
+							if ((mmHg && atm) === '') {
+                            div.innerText = "Não há dados suficientes.";
+                            }else {}
+						}
+					}
+				}
 			}
-			
-			if (resultado2 < 0){
-				resultado2 = resultado2 * -1;
-				console.log(resultado2);
-			}
-			
-			div.innerText = "Erro Absoluto: " + resultado1 + "\n" + "Erro Relativo: " + resultado2 + "%";
-		}else {
-			if(valor_real || valor_aproximado === '')
-				div.innerText = "Não há valores suficientes.";
-		}
-	}
 		
 	
     </script>
