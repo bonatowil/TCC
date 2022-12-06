@@ -86,3 +86,4 @@ def rerr(n, trueValue, round=False, roundDecimal=2): #reer = relative error (Err
         return reround(relative_error, roundDecimals=roundDecimal)
     else:
         return relative_error
+

@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../assets/icons/lab_icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../assets/css/formulas.css">
     <script defer src="../../assets/script/script.js"></script>
-    <title>Conversão de massa</title>
+    <title>Conversâo de medidas</title>
 </head>
 <body>
     <div class="overlay"></div>
@@ -24,54 +25,52 @@
         </div>
     </nav>
     <div class="script">
-        <h1><span>Temperatura</span></h1>
-        <h2>Conversão de ºC para K & K para ºC</h2>
+        <h1><span>Comprimento</span></h1>
+        <h2>Conversão de Km para m & m para Km</h2>
         <div class="formula">
-            <p>0ºC = 273,15 K</p>
+            <p>1Km = 1000m</p>
             <p style="font-weight: 400; opacity: .3;">Fórmula</p>
         </div>
         <div class="entry">
             <p style="text-align: center; margin-bottom: 10px; opacity: .7;">Deixe em branco o valor que deseja descobrir</p>
             <div class="text-input">
-                <input id="textinput1" name="textinput" value="" type="text" placeholder="ºC">
-                <input id="textinput2" name="textinput" value="" type="text" placeholder="K">
+                <input id="textinput1" name="textinput" value="" type="text" placeholder="Km">
+                <input id="textinput2" name="textinput" value="" type="text" placeholder="m">
             </div>
-            <button onclick="temperatura()"><span>Calcular</span></button>
+            <button onclick="massa()"><span>Calcular</span></button>
         </div>
         <div id="resultado">
             <p>Resultados</p>
         </div>
     </div>
     <script type="text/javascript">
-    function temperatura(){
+    function massa(){
         var div = document.getElementById("resultado");
-        let C = document.getElementById("textinput1").value;
-        parseFloat(C);
-        let K = document.getElementById("textinput2").value;
-        parseFloat(K);
+        let Km = document.getElementById("textinput1").value;
+        parseFloat(Km);
+        let m = document.getElementById("textinput2").value;
+        parseFloat(m);
     
         var resultado;
-        if (C === '' && K !== '') {
-            resultado = K - 273.15;
+        if (Km === '' && m !== '') {
+            resultado = m / 1000;
             div.innerText = "O resultado do valor a ser descoberto é: "+ resultado;
             } else {
-                if (K === '' && C !== '') {
-                    resultado = parseFloat(C) + 273.15;
-					console.log(typeof C);
+                if (m === '' && Km !== '') {
+                    resultado = Km * 1000;
                     div.innerText = "O resultado do valor a ser descoberto é: "+ resultado;
                     } else {
-					if ((K && C) !== '') {
+					if ((Km && m) !== '') {
                         div.innerText = "Não há dados a serem descobertos.";
                         } else {
-							if ((K && C) === '') {
+							if ((Km && m) === '') {
                             div.innerText = "Não há dados suficientes.";
                             }else {}
-						}
+                    
 					}
 				}
 			}
-		
-	
+		}
     </script>
 </body>
 </html>

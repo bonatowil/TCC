@@ -246,6 +246,12 @@ h2 {
     text-align: center;
 }
 
+.formula img {
+    filter: brightness(1.5);
+    width: 250px;
+    mix-blend-mode: color-burn;
+}
+
 .formula p {
     margin: 0;
 }
@@ -264,6 +270,20 @@ h2 {
     opacity: .8;
     width: 100%;
 }
+
+.desvio {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5vw;
+    flex-wrap: wrap;
+}
+
+.desvio p {
+    margin-bottom: 10px;
+}
+
 
 .entry {
     margin-top: 5vh;
@@ -343,12 +363,51 @@ input:hover, button:hover {
     flex-grow: 1;
 }
 
+.text-input .input {
+    display: flex;
+    flex-grow: 1;
+}
+
+.text-input .input::after {
+    width: 15%;
+    border: 1px solid gray;
+    display: grid;
+    place-items: center;
+    border-radius: 5px;
+    margin: 0.5vh 0.3vh;
+}
+
+.text-input .input input {
+    width: calc(85% - 0.5vh);
+}
+
+
 .radio-input {
     display: flex;
     justify-content: center;
     gap: 3vw;
 }
 
+.density::after {
+    content: "g/cm³";
+
+}
+
+.mass::after {
+    content: "g";
+}
+
+.volume::after {
+    content: "L";
+}
+
+.mols::after {
+    content: "Mols";
+}
+
+.temp::after {
+    content: "K";
+}
 
 @keyframes scale {
     to {

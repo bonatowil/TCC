@@ -235,7 +235,7 @@ nav div.links {
 
 .hero .us {
     display: flex;
-    width: 100%;
+    width: 93%;
     margin: auto;
     flex-direction: row;
     align-items: center;
@@ -285,8 +285,8 @@ nav div.links {
 
 .card .second.name {
     font-size: 2em;
-    filter: brightness(1.8);
-    opacity: .25;
+    filter: brightness(2);
+    opacity: .4;
 }
 
 .content_list:not(:last-of-type) {

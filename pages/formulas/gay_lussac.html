@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../assets/icons/lab_icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../assets/css/formulas.css">
     <script defer src="../../assets/script/script.js"></script>
     <title>Lei de Gay-Lussac</title>
@@ -33,10 +34,18 @@
         <div class="entry">
             <p style="text-align: center; margin-bottom: 10px; opacity: .7;">Deixe em branco o valor que deseja descobrir</p>
             <div class="text-input">
-                <input id="textinput1" name="textinput" value="" type="text" placeholder="V1">
-                <input id="textinput2" name="textinput" value="" type="text" placeholder="V2">
-                <input id="textinput3" name="textinput" value="" type="text" placeholder="T1">
-                <input id="textinput4" name="textinput" value="" type="text" placeholder="T2">
+                <div class="input volume">
+                    <input id="textinput1" name="textinput" value="" type="text" placeholder="V1">
+                </div>
+                <div class="input volume">
+                    <input id="textinput2" name="textinput" value="" type="text" placeholder="V2">
+                </div>
+                <div class="input temp">
+                    <input id="textinput3" name="textinput" value="" type="text" placeholder="T1">
+                </div>
+                <div class="input temp">
+                    <input id="textinput4" name="textinput" value="" type="text" placeholder="T2">
+                </div>
             </div>
             <button onclick="gay_lussac()"><span>Calcular</span></button>
         </div>

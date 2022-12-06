@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../assets/icons/lab_icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../assets/css/formulas.css">
     <script defer src="../../assets/script/script.js"></script>
     <title>Desvio Padrão</title>
@@ -25,11 +26,19 @@
     </nav>
     <div class="script">
         <h1><span>Desvio Padrão</span></h1>
-        <h2>O desvio padrão é um parâmetro que indica o grau de variação de um conjunto de elementos.</h2>
+        <h2>O desvio padrão é um parâmetro que indica o grau de variação de um conjunto de elementos. Possui dois valores diferentes, o amostral e o populacional.</h2>
         <div class="formula">
-            <p class="div">(X1 + X2 + ... + Xn)</p>
-            <p>n</p>
-            <p style="font-weight: 400; opacity: .3;">Fórmula</p>
+            <div class="desvio">
+                <div class="amostral">
+                    <p>Amostral</p>
+                    <img  src="../../assets/formulas/dpamostral.png" alt="Desvio Padrão Amostral">
+                </div>
+                <div class="populacional">
+                    <p>Populacional</p>
+                    <img  src="../../assets/formulas/dppopulacional.png" alt="Desvio Padrão Amostral">
+                </div>
+            </div>
+            <p style="font-weight: 400; opacity: .3;">Fórmulas</p>
         </div>
         <div class="entry">
             <p>Insira os valores separados por vírgula, caso hajam casas decimais, use "."</p>
@@ -67,28 +76,21 @@
             console.log(int_array)
             console.log(sum)
             console.log(media)
+            console.log(int_array)
                 
-            for (i in numeros_array){
-                push_do_desvio = (i - media);
-                if (push_do_desvio > 0){
-                    push_do_desvio = push_do_desvio ** 2;
-                    desvio.push(push_do_desvio);
-                } else{
-                    push_do_desvio = push_do_desvio * -1;
-                    push_do_desvio = push_do_desvio ** 2;
-                    desvio.push(push_do_desvio);
-                }
+            for (var i = 0; i<int_array.length; i++){
+                push_do_desvio = (int_array[i] - media) ** 2;
+                desvio.push(push_do_desvio);
             }
             console.log(desvio);
             for(var i = 0; i<desvio.length ;i++){
                 soma_desvio += desvio[i];
             }
             console.log(soma_desvio);
-            var desvio_final = (soma_desvio / desvio.length) ** 0.5
-            console.log(desvio_final);
+            var desvio_populacional = (soma_desvio / desvio.length) ** 0.5;
+            var desvio_amostral = (soma_desvio / (desvio.length - 1)) ** 0.5;
             
-            div.innerText = "O desvio padrão é: " + desvio_final;
-
+            div.innerText = "O desvio padrão populacional é: " + desvio_populacional + "\n" + "O desvio padrão amostral é:" + desvio_amostral;
     }
     </script>
 </body>
