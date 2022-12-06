@@ -24,7 +24,72 @@
         </div>
     </nav>
     <div class="script">
-        <!-- Coloca o html aqui, tem q ser dentro dessa tag script -->
+        <h1><span>Desvio Padrão</span></h1>
+        <h2>O desvio padrão é um parâmetro que indica o grau de variação de um conjunto de elementos.</h2>
+        <div class="formula">
+            <p class="div">(X1 + X2 + ... + Xn)</p>
+            <p>n</p>
+            <p style="font-weight: 400; opacity: .3;">Fórmula</p>
+        </div>
+        <div class="entry">
+            <p>Insira os valores separados por vírgula, caso hajam casas decimais, use "."</p>
+            <p style="font-weight: bolder; opacity: .8;margin: .5em 0 1em 0;">Ex.: 1.58,1.74...</p>
+            <textarea type="number" id="numeros" name="numeros" rows="5" cols="33" placeholder="Insira aqui os valores."></textarea>
+            <button onclick="desvio_padrao()"><span>Calcular</span></button>
+        </div>
+        <div id="resultado">
+            <p style="padding: .6em;">Resultados</p>
+        </div>
     </div>
+    <script type="text/javascript">
+        function desvio_padrao(){
+            var desvio = [];
+            var soma_desvio = 0;
+            var desvio_final = 0;
+            var div = document.getElementById("resultado");
+            let numeros = document.getElementById("numeros").value;
+            numeros_array = numeros.split(',');
+            int_array = [];
+
+            for (i in numeros_array){
+                num_novo_antigo = numeros_array[i];
+                num_novo = parseFloat(num_novo_antigo);
+                int_array.push(num_novo);
+            }
+            console.log(int_array);
+            var sum = 0;
+            for(let i=0;i<int_array.length;i++){
+                sum+=int_array[i];
+            }
+            
+            int_array.filter(elm => elm);
+            media = sum / int_array.length;
+            console.log(int_array)
+            console.log(sum)
+            console.log(media)
+                
+            for (i in numeros_array){
+                push_do_desvio = (i - media);
+                if (push_do_desvio > 0){
+                    push_do_desvio = push_do_desvio ** 2;
+                    desvio.push(push_do_desvio);
+                } else{
+                    push_do_desvio = push_do_desvio * -1;
+                    push_do_desvio = push_do_desvio ** 2;
+                    desvio.push(push_do_desvio);
+                }
+            }
+            console.log(desvio);
+            for(var i = 0; i<desvio.length ;i++){
+                soma_desvio += desvio[i];
+            }
+            console.log(soma_desvio);
+            var desvio_final = (soma_desvio / desvio.length) ** 0.5
+            console.log(desvio_final);
+            
+            div.innerText = "O desvio padrão é: " + desvio_final;
+
+    }
+    </script>
 </body>
 </html>
