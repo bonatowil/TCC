@@ -54,7 +54,7 @@
 		
         if (desvio !== '' && media_dados !== '') {
 			resultado = (desvio * 100) / media_dados ;
-			div.innerText = "Desvio padrão relativo: " + resultado + "%";
+			div.innerText = "Desvio padrão relativo: " + resultado;
 		}else {
 			if(desvio || media_dados === '')
 				div.innerText = "Não há valores suficientes.";
