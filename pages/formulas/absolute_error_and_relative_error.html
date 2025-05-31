@@ -28,15 +28,15 @@
         <h1><span>Erro absoluto e relativo</span></h1>
         <h2>Cálculo do erro absoluto e erro relativo</h2>
         <div class="formula">
-            <p>Erro absoluto = Valor real - Valor aproximado(medido)</p>
-            <p>Erro relativo (%) = Valor real / Valor aproximado(medido) * 100</p>
+            <p>Erro absoluto = Valor aproximado(medido) - Valor real</p>
+            <p>Erro relativo (%) = ((Valor aproximado(medido) - Valor real) / Valor real) * 100</p>
             <p style="font-weight: 400; opacity: .3;">Fórmula</p>
         </div>
         <div class="entry">
             <p style="text-align: center; margin-bottom: 10px; opacity: .7;">Deixe em branco o valor que deseja descobrir</p>
             <div class="text-input">
-                <input id="textinput1" name="textinput" value="" type="text" placeholder="Valor real">
                 <input id="textinput2" name="textinput" value="" type="text" placeholder="Valor aproximado">
+                <input id="textinput1" name="textinput" value="" type="text" placeholder="Valor real">
             </div>
             <button onclick="erros()"><span>Calcular</span></button>
         </div>
@@ -55,18 +55,18 @@
         var resultado;
 		
         if (valor_real !== '' && valor_aproximado !== '') {
-			resultado1 = valor_real - valor_aproximado;
-			resultado2 = (valor_real / valor_aproximado) * 100;
+			resultado1 = valor_aproximado - valor_real;
+			resultado2 = ((valor_aproximado - valor_real) / valor_real) * 100;
 			
-			if (resultado1 < 0){ 
-				resultado1 = resultado1 * -1;
-				console.log(resultado1);
-			}
+			// if (resultado1 < 0){ 
+			// 	resultado1 = resultado1 * -1;
+			// 	console.log(resultado1);
+			// }
 			
-			if (resultado2 < 0){
-				resultado2 = resultado2 * -1;
-				console.log(resultado2);
-			}
+			// if (resultado2 < 0){
+			// 	resultado2 = resultado2 * -1;
+			// 	console.log(resultado2);
+			// }
 			
 			div.innerText = "Erro Absoluto: " + resultado1 + "\n" + "Erro Relativo: " + resultado2 + "%";
 		}else {
